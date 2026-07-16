@@ -1,0 +1,59 @@
+{
+  "name": "ha7ch-school",
+  "version": "1.0.0",
+  "base": "https://school.ha7ch.com",
+  "files": [
+    {
+      "url": "school.md",
+      "dest": "SKILL.md"
+    },
+    {
+      "url": "references/course-ai-native.md",
+      "dest": "references/course-ai-native.md"
+    },
+    {
+      "url": "references/course-fde.md",
+      "dest": "references/course-fde.md"
+    },
+    {
+      "url": "references/lessons/ai-native/01-zero-token-design.md",
+      "dest": "references/lessons/ai-native/01-zero-token-design.md"
+    },
+    {
+      "url": "references/lessons/ai-native/02-zero-token-after-chatgpt.md",
+      "dest": "references/lessons/ai-native/02-zero-token-after-chatgpt.md"
+    },
+    {
+      "url": "references/lessons/ai-native/03-lab-cv-pro.md",
+      "dest": "references/lessons/ai-native/03-lab-cv-pro.md"
+    },
+    {
+      "url": "references/lessons/ai-native/04-ha7ch-picks.md",
+      "dest": "references/lessons/ai-native/04-ha7ch-picks.md"
+    },
+    {
+      "url": "references/lessons/fde/01-what-is-fde.md",
+      "dest": "references/lessons/fde/01-what-is-fde.md"
+    },
+    {
+      "url": "references/lessons/fde/02-labs.md",
+      "dest": "references/lessons/fde/02-labs.md"
+    },
+    {
+      "url": "references/lessons/fde/03-four-cities-report.md",
+      "dest": "references/lessons/fde/03-four-cities-report.md"
+    },
+    {
+      "url": "references/pedagogy.md",
+      "dest": "references/pedagogy.md"
+    },
+    {
+      "url": "references/sources.md",
+      "dest": "references/sources.md"
+    },
+    {
+      "url": "references/state-schema.md",
+      "dest": "references/state-schema.md"
+    }
+  ]
+}

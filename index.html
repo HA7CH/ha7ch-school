@@ -38,6 +38,12 @@
   footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
   a{color:inherit}
   .note{font-size:13px;color:var(--muted);margin-top:10px}
+
+  .oneliner{display:flex;align-items:stretch;gap:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;margin:0 0 12px;background:var(--card)}
+  .ol-tag{flex:0 0 auto;display:flex;align-items:center;padding:12px 14px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--accent);border-right:1px solid var(--line);white-space:nowrap}
+  .ol-tag.alt{color:var(--muted)}
+  .ol-code{flex:1;display:flex;align-items:center;padding:12px 14px;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:transparent;border:0;border-radius:0;color:var(--fg);overflow-x:auto;white-space:nowrap}
+  @media (max-width:560px){.oneliner{flex-direction:column}.ol-tag{border-right:0;border-bottom:1px solid var(--line)}.ol-code{white-space:normal;word-break:break-all}}
 </style>
 </head>
 <body>
@@ -74,13 +80,22 @@
     </div>
   </div>
 
-  <h2>怎么上课</h2>
-  <ol class="steps">
-    <li>在 Claude Code 里装上 <code>ha7ch-school</code> skill（小红书 SkillHub 可装）。</li>
-    <li>对它说「带我学 AI Native」「想学 FDE」，或直接 <code>/ha7ch-school</code>。</li>
-    <li>它会主动招呼你、问你想学哪门课——然后带着你一节一节往下走。</li>
-  </ol>
-  <p class="note">课程内容托管在本站、永远最新；skill 只是把你接到这里。学习进度存在你自己机器上。</p>
+  <h2>怎么装 · 一句话搞定</h2>
+  <p class="lead" style="margin:0 0 18px">把下面对应你所用 agent 的那句话，复制粘贴给它——它会去读安装页、自动把学校装好并开课。</p>
+
+  <div class="oneliner">
+    <div class="ol-tag">Claude&nbsp;Code</div>
+    <code class="ol-code">读 https://school.ha7ch.com/claude.md ，帮我把 HA7CH School 装上</code>
+  </div>
+  <div class="oneliner">
+    <div class="ol-tag">Codex</div>
+    <code class="ol-code">读 https://school.ha7ch.com/codex.md ，帮我把 HA7CH School 装上</code>
+  </div>
+  <div class="oneliner">
+    <div class="ol-tag alt">免安装 · 随时试</div>
+    <code class="ol-code">读 https://school.ha7ch.com/school.md ，带我上课</code>
+  </div>
+  <p class="note">课程内容托管在本站、永远最新；一句话让你的 agent 自己把学校接上。学习进度存在你自己机器上。</p>
 
   <div class="links">
     <a class="btn pri" href="/school.md">查看课程入口（school.md）</a>
