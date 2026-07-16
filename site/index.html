@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HA7CH AI Native School</title>
+<meta name="description" content="加载即入学。一个懂行的 Agent 导师，带着你学 AI Native 与 FDE。" />
+<style>
+  :root{
+    --bg:#0b0b0c; --fg:#f4f4f5; --muted:#a1a1aa; --line:#26262a; --card:#151517; --accent:#e5484d;
+  }
+  @media (prefers-color-scheme: light){
+    :root{ --bg:#fafafa; --fg:#18181b; --muted:#52525b; --line:#e4e4e7; --card:#ffffff; --accent:#e5484d; }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 80px}
+  .brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+  h1{font-size:40px;line-height:1.15;margin:0 0 14px;font-weight:750;letter-spacing:-.02em}
+  .tag{font-size:19px;color:var(--muted);margin:0 0 8px}
+  .lead{font-size:16px;color:var(--muted);margin:22px 0 40px;max-width:60ch}
+  .courses{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 40px}
+  @media (max-width:640px){.courses{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px}
+  .card h3{margin:0 0 6px;font-size:17px}
+  .card .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-weight:600}
+  .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
+  .card li{margin:3px 0}
+  h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:40px 0 14px;font-weight:600}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  .steps li{position:relative;padding:0 0 14px 34px;color:var(--fg)}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-1px;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:12px;color:var(--muted)}
+  code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 7px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+  .links{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 0}
+  .btn{display:inline-block;text-decoration:none;font-size:14px;padding:9px 16px;border-radius:9px;border:1px solid var(--line);color:var(--fg)}
+  .btn.pri{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+  footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  a{color:inherit}
+  .note{font-size:13px;color:var(--muted);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="brand">HA7CH · AI Native School</p>
+  <h1>加载即入学。</h1>
+  <p class="tag">一个懂行的 Agent 导师，坐你旁边，带着你学。</p>
+  <p class="lead">
+    这不是一堆文档让你自己啃。它是一个 Claude Code skill——你的 Agent 加载它，就变成 HA7CH 这所 AI Native 学校的导师本人：
+    一次一小块地讲，随时能被你打断提问，按你的能力和进度动态排课，跨会话记得你学到哪。
+  </p>
+
+  <div class="courses">
+    <div class="card">
+      <p class="k">Course 01</p>
+      <h3>AI Native</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px">搞懂这个时代到底怎么工作。</p>
+      <ul>
+        <li>零 Token 设计</li>
+        <li>ChatGPT Work 之后，活儿怎么变</li>
+        <li>实操：亲手做一个 AI native 产品</li>
+        <li>HA7CH 精选延伸</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="k">Course 02</p>
+      <h3>FDE</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px">Forward Deployed Engineer 是什么、你适不适合。</p>
+      <ul>
+        <li>FDE 到底是什么（Echo + Delta）</li>
+        <li>实操：被诚实诊断一次 &amp; 货代擂台</li>
+        <li>一线四城调查</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>怎么上课</h2>
+  <ol class="steps">
+    <li>在 Claude Code 里装上 <code>ha7ch-school</code> skill（小红书 SkillHub 可装）。</li>
+    <li>对它说「带我学 AI Native」「想学 FDE」，或直接 <code>/ha7ch-school</code>。</li>
+    <li>它会主动招呼你、问你想学哪门课——然后带着你一节一节往下走。</li>
+  </ol>
+  <p class="note">课程内容托管在本站、永远最新；skill 只是把你接到这里。学习进度存在你自己机器上。</p>
+
+  <div class="links">
+    <a class="btn pri" href="/school.md">查看课程入口（school.md）</a>
+    <a class="btn" href="https://ha7ch.com">HA7CH</a>
+  </div>
+
+  <footer>
+    Made by HA7CH · 让每个人都能跟着懂行的人，学会在 AI 时代真正地工作。
+  </footer>
+</div>
+</body>
+</html>
