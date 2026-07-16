@@ -2,6 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/install-claude.md", "destination": "/install.md", "permanent": true },
+    { "source": "/install-codex.md", "destination": "/install.md", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)\\.md",
