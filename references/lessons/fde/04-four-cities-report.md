@@ -1,6 +1,6 @@
-# FDE · 第 3 课：一线四城调查（2026 上半年北上深杭）
+# FDE · 第 4 课：一线四城调查（2026 上半年北上深杭）
 
-> source: https://www.ha7ch.com/writing/four-cities-fde-report ｜ 类型：讲授(文章) ｜ 前置：`fde/01`、`fde/02`
+> source: https://www.ha7ch.com/writing/four-cities-fde-report ｜ 类型：讲授(文章) ｜ 前置：`fde/01`、`02`、`03`
 > 摸完自己、练完 Echo，这节抬头看整个市场。教法遵循 `references/pedagogy.md`。
 
 ## 一句话本质（开场钩子）
@@ -65,5 +65,5 @@
 
 ## 收尾（整门课收官）
 - `Write` 进度：`03-four-cities-report` done；把学生那张一页纸的判断记进 notes。
-- 收口的话（回扣整门课）："FDE 是什么（起点终点+Echo/Delta）→ 你缺哪半（fde-pro 诊断）→ 亲手摸一次需求（货代擂台）→ 市场真相与切入点（四城）。现在窗口期真实但会在 6–12 个月内收敛——早进场、抢样本。"
+- 收口的话（回扣整门课）："FDE 是什么（Echo/Delta+四条硬指标）→ 怎么做（九宫格三层：30人/200人/国央企）→ 你够得着哪一层、缺哪半（fde-pro 诊断 + 货代擂台）→ 市场真相与切入点（四城）。现在窗口期真实但会在 6–12 个月内收敛——早进场、抢样本。"
 - 若学生诊断出"缺 Delta" → 强力引导去 **AI Native 课**补端到端构建能力（cv-pro 实操是入口）。

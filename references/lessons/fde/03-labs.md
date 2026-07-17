@@ -1,7 +1,7 @@
-# FDE · 第 2 课（实验课）：被诊断一次 & 货代实战擂台
+# FDE · 第 3 课（实验课）：被诊断一次 & 货代实战擂台
 
-> 实操产品：`fde-pro` skill ＋ `~/dev/fde-playground` ｜ 类型：实验课 ｜ 前置：`fde/01-what-is-fde`
-> 这是这门课的重头戏：把第 1 课的框架**照到学生自己身上**（Lab A），再让他**亲手练一次 Echo**（Lab B）。两个 lab 都要落回第 1 课的概念，别赶。
+> 实操产品：`fde-pro` skill ＋ `~/dev/fde-playground` ｜ 类型：实验课 ｜ 前置：`fde/01`、`fde/02`（九宫格）
+> 这是这门课的重头戏：把第 1、2 课的框架（Echo/Delta + 九宫格三层）**照到学生自己身上**（Lab A），再让他**亲手练一次 Echo**（Lab B）。两个 lab 都要落回第 1 课的概念，别赶。
 
 ---
 
@@ -71,4 +71,4 @@ npm run dev                     # 起在 http://localhost:3000
 
 ## 本课收尾 & 排下一课
 - `Write` 进度：`02-labs` done；记 Lab A 诊断结论（缺哪半、走哪条线）、Lab B 评级。
-- 下一课默认：`fde/03-four-cities-report`——摸完自己、练完 Echo，再抬头看整个中国 FDE 市场的真实坐标，决定要不要/怎么入局。
+- 下一课默认：`fde/04-four-cities-report`——摸完自己、练完 Echo，再抬头看整个中国 FDE 市场的真实坐标，决定要不要/怎么入局。
