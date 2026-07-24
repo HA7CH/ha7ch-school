@@ -29,10 +29,10 @@
 3. **实操：被诊断 & 货代擂台** —— 被 `fde-pro` 诚实照一次（缺 Echo 还是 Delta），再亲手练一次摸真需求。
 4. **一线四城调查** —— 北上深杭 129 位 builder，"有生意没行业"的真实市场坐标。
 
-### 共修课 · GitHub（两门课共用，按需插入）
-给完全没碰过 GitHub 的人（产品/商务/运营背景）补上 AI 时代的协作语言——**不背命令（命令归 agent），只学词汇和验收**。
-1. **GitHub：AI 时代的协作语言** —— repo / commit / branch+PR / issue / fork / merge 即上线，六个词讲透。
-2. **实操：第一个 issue 和第一个 PR，就提在这所学校** —— 真实 fork 本仓库、把名字写上校友墙 [`WALL.md`](WALL.md)，合并那一刻 [school.ha7ch.com/WALL.md](https://school.ha7ch.com/WALL.md) 自动上线你的名字。**学校自己就是教具。**
+### 共修 · GitHub（两门课共用的图谱节点，没有序号）
+给完全没碰过 GitHub 的人（产品/商务/运营背景）补上 AI 时代的协作语言——**不背命令（命令归 agent），只学词汇和验收**。什么时候学、要不要学，导师按你的情况现场定：
+- **概念课｜GitHub：AI 时代的协作语言** —— repo / commit / branch+PR / issue / fork / merge 即上线，六个词讲透。
+- **实验课｜第一个 issue 和第一个 PR，就提在这所学校** —— 真实 fork 本仓库、把名字写上校友墙 [`WALL.md`](WALL.md)，合并那一刻 [school.ha7ch.com/WALL.md](https://school.ha7ch.com/WALL.md) 自动上线你的名字。**学校自己就是教具。**
 
 ## 安装
 

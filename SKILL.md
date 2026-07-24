@@ -62,9 +62,9 @@ description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载�
 - **AI Native** → Read `references/course-ai-native.md`
 - **FDE** → Read `references/course-fde.md`
 
-两门课**共用的共修课**（GitHub 等基础课）放在 `references/lessons/shared/`——不单独成课、不在入学处报名，各课大纲里带索引和「什么时候插」规则，按学生画像见缝插入（比如商务背景的学生进实操前先补 GitHub）。
+两门课**共用的共修节点**（GitHub 等基础课）放在 `references/lessons/shared/`——**没有课号、不定顺序**：知识是图谱，不是序列。各课大纲把它们当图谱节点索引（讲什么 / 依赖什么 / 什么信号该接入），要不要学、什么时候学，由导师按这个学生的情况现场决定（比如商务背景的学生进实操前先补 GitHub 概念）。
 
-课程大纲里有：这门课的模块清单、每节目标、默认顺序、**自适应分支规则**（比如学生已经懂零 token 就跳去实操）、以及每节课对应的 lesson 文件路径。
+课程大纲里有：这门课的模块清单、每节目标、**知识图谱**（依赖边 + 共修节点接入信号 + 无画像信号时的兜底路径——知识是图谱不是序列，文件名里的数字只是文件 ID）、**自适应分支规则**（比如学生已经懂零 token 就跳去实操）、以及每节课对应的 lesson 文件路径。
 
 **真正讲某一节课时，才 Read 那节的 lesson 文件**（如 `references/lessons/ai-native/01-zero-token-design.md`）。lesson 文件里是这节课的：钩子、核心概念、真实 source（文章 URL / 本地口播稿 / 产品）、可引用金句、可选巩固题、实操步骤。**渐进加载：没上到的课别提前读。**
 
@@ -107,7 +107,7 @@ description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载�
 - **AI Native · 实操** → `cv-pro`（让学生把简历变成 `cv.ha7ch.com/{handle}` 活页面，亲手摸一个 AI native 产品长什么样）。见 `references/lessons/ai-native/03-lab-cv-pro.md`。
 - **FDE · 实操 A** → `fde-pro`（让学生被诚实诊断一次"你是不是 FDE、缺哪半"，它敢说"你现在不适合"，先提醒学生别指望被夸）。见 `references/lessons/fde/03-labs.md`。
 - **FDE · 实操 B** → `fde-playground` / `~/dev/fde-playground`（货代实战擂台，把驻场压成可评分挑战）。上手前先照 lesson 文件确认它当前能不能跑，别假装一键可玩。
-- **共修 · 实操（GitHub 实验课）** → `HA7CH/ha7ch-school` 公开仓库本身：学生开出人生第一个 issue（入学打卡）、提出第一个 PR 把名字写上校友墙 `WALL.md`，合并即自动上线 `school.ha7ch.com/WALL.md`——**学校自己就是教具**。见 `references/lessons/shared/github-02-lab-first-pr.md`。
+- **共修 · 实操（GitHub 实验课）** → `HA7CH/ha7ch-school` 公开仓库本身：学生开出人生第一个 issue（入学打卡）、提出第一个 PR 把名字写上校友墙 `WALL.md`，合并即自动上线 `school.ha7ch.com/WALL.md`——**学校自己就是教具**。见 `references/lessons/shared/github-lab-first-pr.md`。
 
 调用方式：用 `Skill` 工具 invoke 对应 skill（如 `cv-pro` / `fde-pro`），或提示学生自己 `/cv-pro`、`/fde-pro`。实操做完，**回到本课**做小结、写进度。
 

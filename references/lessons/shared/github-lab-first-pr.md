@@ -1,13 +1,13 @@
-# 共修课 · GitHub 第 2 课（实验课）：第一个 issue 和第一个 PR，就提在这所学校
+# 共修节点 · GitHub 实验课：第一个 issue 和第一个 PR，就提在这所学校
 
-> 实操对象：https://github.com/HA7CH/ha7ch-school （公开仓库，**你正在上的这所学校本身**）＋ 校友墙 `WALL.md`（合并后见 https://school.ha7ch.com/WALL.md ）｜ 类型：实验课(共修) ｜ 前置：`shared/github-01-what-is-github`（六个词；工程师彩蛋路径可免，见「导师怎么带」）
+> 实操对象：https://github.com/HA7CH/ha7ch-school （公开仓库，**你正在上的这所学校本身**）＋ 校友墙 `WALL.md`（合并后见 https://school.ha7ch.com/WALL.md ）｜ 类型：实验课(共修节点) ｜ 依赖：六个词的理解——通常来自概念课 `shared/github-concepts`；真懂 Git 的现场 30 秒补齐即可（见「导师怎么带」）
 > 这不是模拟、不是沙盒。学生今天真实地：开出人生第一个 issue（入学打卡）→ 提出人生第一个 PR（把自己的名字写上校友墙）→ 被 Lawted 真实 review、合并后名字自动上线 school.ha7ch.com/WALL.md。六个词里前五个（repo/commit/branch+PR/issue/fork）当堂在真仓库上走完；第六个 merge 是道真实的异步关——**开出 PR 即成功**。
 
 ## 这节课要干什么（一句话）
 让学生用"我表达意图、agent 执行、我验收"的 AI native 姿势，在 `HA7CH/ha7ch-school` 上完成：①第一个 issue（入学打卡）；②第一个 PR（往 `WALL.md` 末尾加上自己那一行）。**干活的命令全程零行**——学生唯一亲手做的是注册和登录授权，那是认证，不是干活。
 
 ## 开场（把实操钉在理念上）
-> "上一课说：命令是 agent 的事，词汇和判断是你的事。光听不算数。这节课你亲手走一遍——你只对我说话，我来跑命令；每一步我都会告诉你现在发生的事对应哪个词。做完之后，'开 issue''提 PR''fork''merge'这几个词对你就不再是名词解释，而是你干过的事。而且对象是真的：你的 PR 会被 Lawted 本人 review，合并那一刻起，school.ha7ch.com/WALL.md 上就有你的名字。"
+> "概念课里说过（刚补过的也算）：命令是 agent 的事，词汇和判断是你的事。光听不算数。这节课你亲手走一遍——你只对我说话，我来跑命令；每一步我都会告诉你现在发生的事对应哪个词。做完之后，'开 issue''提 PR''fork''merge'这几个词对你就不再是名词解释，而是你干过的事。而且对象是真的：你的 PR 会被 Lawted 本人 review，合并那一刻起，school.ha7ch.com/WALL.md 上就有你的名字。"
 
 可以顺手把 Lawted 自己的工作方式亮出来（一手原话，出处《我愿称之为🚽开发法》）：他修自己产品的 bug，流程就是——"我只管定位问题和建 issue，代码肯定不动"，然后让 Claude Code 去干，最后 agent 汇报"全部打包在 PR #102 中，等待你在 iPhone 上验证后合并"。**你今天做的，就是他每天做的。**
 
@@ -15,7 +15,7 @@
 - **学生只做三件事**：注册/登录 GitHub（唯一要他亲手做的）、用自然语言说他想留什么话、在关键节点点头验收。
 - **你（导师）负责**：跑全部命令（`gh` CLI）、每一步用六个词解说"刚才发生了什么"、把每个真实 URL 丢给学生自己点开看。
 - **节奏**：一步一确认，别一口气跑完——这课的价值一半在动作、一半在解说。
-- **跳过 G1 直入本课的学生**（工程师彩蛋路径）：开场用 30 秒把六个词过一遍（别说"上一课"），逐步解说的措辞从"对应上一课的词 Y"改成"对应的概念是 Y"；其余照走。
+- **没上过概念课直接进本课的学生**（真懂 Git 的彩蛋路径）：开场用 30 秒把六个词过一遍（别提"概念课里说过"），其余照走。
 
 ## 学生上手步骤（一步一确认）
 
@@ -47,7 +47,7 @@
 2. **branch（平行草稿）**：`git checkout -b wall/{学生handle}` → "现在开了一份**平行草稿**，名字叫 `wall/{handle}`。接下来怎么改都动不到正本——这就是 branch 存在的意义。"
 3. **改**：打开 `WALL.md`，照文件里写明的格式，在**末尾追加一行**（日期用今天、@学生的 username、一句话用他自己的话）。改完把这一行念给学生确认——**这是他的名字，一个字都要他点头**。
 4. **commit（存档点）**：`git add WALL.md && git commit -m "wall: 新同学 @{handle} 上墙"` → "存档打好了：谁、何时、改了哪一行、为什么，写进历史了。"
-5. **push + 开 PR（请过目）**：`git push -u origin wall/{学生handle}` → "push = 把你电脑上打好的存档**送回你 GitHub 名下的那份复印件**，这样全世界才看得到。" 然后 `gh pr create --repo HA7CH/ha7ch-school --title "wall: 新同学 @{handle} 上墙" --body "共修课 GitHub 第 2 课实操。来自 {学生一句话自介}。"` → "申请单递出去了——从你的复印件，提回学校正本。"
+5. **push + 开 PR（请过目）**：`git push -u origin wall/{学生handle}` → "push = 把你电脑上打好的存档**送回你 GitHub 名下的那份复印件**，这样全世界才看得到。" 然后 `gh pr create --repo HA7CH/ha7ch-school --title "wall: 新同学 @{handle} 上墙" --body "共修 GitHub 实验课实操。来自 {学生一句话自介}。"` → "申请单递出去了——从你的复印件，提回学校正本。"
 6. **看 diff（验收界面）**：把 PR URL 给学生自己点开 → 点 **Files changed** → "绿色那一行就是你加的。以后你让任何 agent 改任何东西，验收看的就是这个界面。今天你在墙的这一侧（提交方），以后你多数时候在另一侧（把关方）。"
 
 ### 第 3 步 · 等 merge（真实世界有延迟，这也是课）
@@ -73,7 +73,7 @@
 3. **FDE 课学生**："你和客户之间，issue 和 PR 分别对应 Echo/Delta 的哪半？"（issue 是 Echo 的落点——摸清的需求落成台账；PR 是 Delta 的交付单元——做出来的东西提请验收。）
    **AI Native 课学生**："这套流程里哪一步印证了'零 token'那套生态逻辑？"（好答案信号：整条协作链公开、免费、不烧一个 token；产品和课程都长在这条公开基础设施上。）
 
-## 收尾 & 排下一课
-- `Write` 进度：`shared/github-02-lab-first-pr` done（网络不通留作业则 `in-progress`）；notes 记 issue/PR 的 URL，方便他回来查 merge 状态。
+## 收尾 & 排下一步
+- `Write` 进度：`shared/github-lab-first-pr` done（网络不通留作业则 `in-progress`）；notes 记 issue/PR 的 URL，方便他回来查 merge 状态。
 - 提醒学生：merge 后记得回 https://school.ha7ch.com/WALL.md 看自己名字上线——那一眼，比这节课讲的任何话都记得牢。
-- 回到学生原本所在课程的主线接着排（从哪门课插进来的回哪门课）：FDE 课学生通常接 `fde/03-labs`（刚练的"把话变成 issue"马上要在擂台用）；AI Native 课学生通常接 `ai-native/03-lab-cv-pro` 或继续原进度。
+- 回到学生原本所在课程的图谱接着排（从哪门课接进来的回哪门课）：FDE 课学生常接 `fde/03-labs`（刚练的"把话变成 issue"马上要在擂台用）；AI Native 课学生常接 `ai-native/03-lab-cv-pro` 或继续原进度——都不是规定，按他此刻的状态定。

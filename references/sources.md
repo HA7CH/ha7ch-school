@@ -37,8 +37,8 @@
 
 | 课号 | source | 类型 | 取法 |
 |---|---|---|---|
-| `shared/github-01-what-is-github` | https://github.com/HA7CH/ha7ch-school （公开仓库，**本校即教具**）＋ school.ha7ch.com | 仓库+网站 | 带学生网页浏览仓库/issue/PR 页；需要引页面内容用 WebFetch |
-| `shared/github-02-lab-first-pr` | 同上仓库 ＋ `WALL.md`（校友墙，线上 https://school.ha7ch.com/WALL.md）＋ `gh` CLI | 实操 | `gh auth login` / `gh issue create` / `gh repo fork` / `gh pr create`；gh 不可用降级走 GitHub 网页编辑流（lesson 里有） |
+| `shared/github-concepts` | https://github.com/HA7CH/ha7ch-school （公开仓库，**本校即教具**）＋ school.ha7ch.com | 仓库+网站 | 带学生网页浏览仓库/issue/PR 页；需要引页面内容用 WebFetch |
+| `shared/github-lab-first-pr` | 同上仓库 ＋ `WALL.md`（校友墙，线上 https://school.ha7ch.com/WALL.md）＋ `gh` CLI | 实操 | `gh auth login` / `gh issue create` / `gh repo fork` / `gh pr create`；gh 不可用降级走 GitHub 网页编辑流（lesson 里有） |
 
 **共修课金句出处**（本地口播稿/图文归档，位置同上「01 口播稿归档位置」）：《采访 Lawted：FDE 与 Ha7ch（中）》（GitHub Issue 三连——梳理需求转 Issue、晚上让 Claude Code 完成、实现变便宜判断变贵）、《我愿称之为🚽开发法》（只建 issue 不动代码、手机验收合并 PR #102）、《被忽略的大陆》（这代人天然会提 issue 发 PR fork）、《Ha7ch 是 Builder 飞轮》（能不能拆 issue 提 PR 是第一层筛选）。别人机器读不到归档时，lesson 文件里的蒸馏版已够用。
 
