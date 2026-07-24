@@ -1,6 +1,6 @@
 {
   "name": "ha7ch-school",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "base": "https://school.ha7ch.com",
   "files": [
     {
@@ -46,6 +46,14 @@
     {
       "url": "references/lessons/fde/04-four-cities-report.md",
       "dest": "references/lessons/fde/04-four-cities-report.md"
+    },
+    {
+      "url": "references/lessons/shared/github-concepts.md",
+      "dest": "references/lessons/shared/github-concepts.md"
+    },
+    {
+      "url": "references/lessons/shared/github-lab-first-pr.md",
+      "dest": "references/lessons/shared/github-lab-first-pr.md"
     },
     {
       "url": "references/pedagogy.md",
