@@ -36,14 +36,17 @@
 
 ## 安装
 
-把这个仓库放到你的 Claude Code 个人 skill 目录：
+最快是一条 npx：
 
 ```bash
-git clone <this-repo> ~/.claude/skills/ha7ch-school
-# 或把仓库内容复制到 ~/.claude/skills/ha7ch-school/
+npx @ha7ch/school            # 自动探测装到 ~/.claude/skills/ha7ch-school
+npx @ha7ch/school --codex    # Codex 用户装到 ~/.codex/skills/
+npx @ha7ch/school --force    # 更新到最新（学习进度在 ~/.ha7ch-school/，不受影响）
 ```
 
-然后在 Claude Code 里 `/ha7ch-school`（或对它说"带我学 AI Native / 想学 FDE / ha7ch school"）即可入学。
+其它方式：把「读 https://school.ha7ch.com/install.md ，帮我把 HA7CH School 装上」贴给你的 agent；免安装则贴「读 https://school.ha7ch.com/school.md ，带我上课」；开发者也可以直接 `git clone https://github.com/HA7CH/ha7ch-school ~/.claude/skills/ha7ch-school`。
+
+装好后在 Claude Code 里 `/ha7ch-school`（或对它说"带我学 AI Native / 想学 FDE / ha7ch school"）即可入学。
 
 **配套 skill（实验课会用到，按需装）**：`cv-pro`、`fde-pro`（都在小红书 SkillHub 可装）。没装也能上，导师会把实操降级成带你走一遍。
 
