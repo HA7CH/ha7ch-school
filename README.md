@@ -25,8 +25,14 @@
 ### ② FDE（Forward Deployed Engineer）
 搞懂 FDE 是什么、你适不适合、怎么入局。
 1. **FDE 到底是什么** —— 起点终点四条硬指标 + Echo/Delta，分清它和外包。
-2. **实操：被诊断 & 货代擂台** —— 被 `fde-pro` 诚实照一次（缺 Echo 还是 Delta），再亲手练一次摸真需求。
-3. **一线四城调查** —— 北上深杭 129 位 builder，"有生意没行业"的真实市场坐标。
+2. **FDE 九宫格** —— 商务/产品/研发 × 三层客户，判断客户在哪一层、该怎么打。
+3. **实操：被诊断 & 货代擂台** —— 被 `fde-pro` 诚实照一次（缺 Echo 还是 Delta），再亲手练一次摸真需求。
+4. **一线四城调查** —— 北上深杭 129 位 builder，"有生意没行业"的真实市场坐标。
+
+### 共修 · GitHub（两门课共用的图谱节点，没有序号）
+给完全没碰过 GitHub 的人（产品/商务/运营背景）补上 AI 时代的协作语言——**不背命令（命令归 agent），只学词汇和验收**。什么时候学、要不要学，导师按你的情况现场定：
+- **概念课｜GitHub：AI 时代的协作语言** —— repo / commit / branch+PR / issue / fork / merge 即上线，六个词讲透。
+- **实验课｜第一个 issue 和第一个 PR，就提在这所学校** —— 真实 fork 本仓库、把名字写上校友墙 [`WALL.md`](WALL.md)，合并那一刻 [school.ha7ch.com/WALL.md](https://school.ha7ch.com/WALL.md) 自动上线你的名字。**学校自己就是教具。**
 
 ## 安装
 
@@ -45,6 +51,7 @@ git clone <this-repo> ~/.claude/skills/ha7ch-school
 
 ```
 SKILL.md                       入学处：加载即问学哪门课、维护学习存档、按能力画像排课
+WALL.md                        校友墙：每一行都是一位学生被合并的第一个 PR
 references/
   pedagogy.md                  教学法内核：动态排课引擎（先强后弱、弱项压轴精讲）
   state-schema.md              学习存档格式（跨会话续学）
@@ -53,7 +60,8 @@ references/
   sources.md                   全部 source 清单（文章 URL / 本地素材 / 实操产品）
   lessons/
     ai-native/                 4 节讲义
-    fde/                       3 节讲义
+    fde/                       4 节讲义
+    shared/                    共修课讲义（GitHub ×2，两门课共用）
 ```
 
 每节讲义都锚定真实素材：HA7CH 的原文文章、Lawted 本人的口播稿、以及真产品。
