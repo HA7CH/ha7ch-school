@@ -70,5 +70,5 @@ npm run dev                     # 起在 http://localhost:3000
 ---
 
 ## 本课收尾 & 排下一课
-- `Write` 进度：`02-labs` done；记 Lab A 诊断结论（缺哪半、走哪条线）、Lab B 评级。
+- `Write` 进度：`fde/03-labs` done；记 Lab A 诊断结论（缺哪半、走哪条线）、Lab B 评级。
 - 下一课默认：`fde/04-four-cities-report`——摸完自己、练完 Echo，再抬头看整个中国 FDE 市场的真实坐标，决定要不要/怎么入局。

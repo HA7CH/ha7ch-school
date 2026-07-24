@@ -23,14 +23,24 @@
 | 课号 | source | 类型 | 取法 |
 |---|---|---|---|
 | 01 | Lawted 本人口播稿/访谈（本地归档，下详） | 口播稿 | Read |
-| 02 | `fde-pro` skill（`~/.claude/skills/fde-pro/SKILL.md`）＋ `~/dev/fde-playground`（货代擂台） | skill+本地项目 | `Skill(fde-pro)`；playground 本地 `npm run dev` |
-| 03 | https://www.ha7ch.com/writing/four-cities-fde-report | 文章 | WebFetch |
+| 02 | 《一张图看懂 FDE 到底怎么做（FDE 九宫格）》口播稿+原图（本地归档，位置同 01） | 口播稿 | Read |
+| 03 | `fde-pro` skill（`~/.claude/skills/fde-pro/SKILL.md`）＋ `~/dev/fde-playground`（货代擂台） | skill+本地项目 | `Skill(fde-pro)`；playground 本地 `npm run dev` |
+| 04 | https://www.ha7ch.com/writing/four-cities-fde-report | 文章 | WebFetch |
 
 **01 口播稿归档位置**：`~/Documents/Lawted's-Video/小红书全量归档_2026-07-13/`
 - 总索引：`全部笔记文本索引.md`
 - 单篇正文：`笔记/{日期}_{id}_{标题}/完整内容.md`
-- 本课重点精读的 9 篇：《一张图看懂 FDE 到底怎么做（FDE 九宫格）》《为什么我更看好 FDE》《采访 Lawted：FDE 与 ha7ch（上/中/下）》《FDE 还在做标准品，就错了》《大客户不需要一个全能选手》《AI 时代，为什么 FDE 会爆发》《AI 时代，程序员都要做 FDE》。
+- 本课重点精读的 9 篇：《一张图看懂 FDE 到底怎么做（FDE 九宫格）》《为什么我更看好 FDE》《采访 Lawted：FDE 与 Ha7ch（上/中/下）》《FDE 还在做标准品，就错了》《大客户不需要一个全能选手》《AI 时代，为什么 FDE 会爆发》《AI 时代，程序员都要做 FDE》。
 - 需要更多 Lawted 原话时，可再从总索引里按关键词（FDE / Echo / Delta / 驻场 / 货代）找更多篇。
+
+## 共修课（两门课共用）
+
+| 课号 | source | 类型 | 取法 |
+|---|---|---|---|
+| `shared/github-01-what-is-github` | https://github.com/HA7CH/ha7ch-school （公开仓库，**本校即教具**）＋ school.ha7ch.com | 仓库+网站 | 带学生网页浏览仓库/issue/PR 页；需要引页面内容用 WebFetch |
+| `shared/github-02-lab-first-pr` | 同上仓库 ＋ `WALL.md`（校友墙，线上 https://school.ha7ch.com/WALL.md）＋ `gh` CLI | 实操 | `gh auth login` / `gh issue create` / `gh repo fork` / `gh pr create`；gh 不可用降级走 GitHub 网页编辑流（lesson 里有） |
+
+**共修课金句出处**（本地口播稿/图文归档，位置同上「01 口播稿归档位置」）：《采访 Lawted：FDE 与 Ha7ch（中）》（GitHub Issue 三连——梳理需求转 Issue、晚上让 Claude Code 完成、实现变便宜判断变贵）、《我愿称之为🚽开发法》（只建 issue 不动代码、手机验收合并 PR #102）、《被忽略的大陆》（这代人天然会提 issue 发 PR fork）、《Ha7ch 是 Builder 飞轮》（能不能拆 issue 提 PR 是第一层筛选）。别人机器读不到归档时，lesson 文件里的蒸馏版已够用。
 
 ## 实操产品/项目一览（"skill 里面套 skill"要拉起的东西）
 - `cv-pro` —— AI native 在线简历，cv.ha7ch.com。装在 `~/.claude/skills/cv-pro/`。

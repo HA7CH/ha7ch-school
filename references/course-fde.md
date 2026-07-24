@@ -13,8 +13,23 @@
 | 3 | `fde/03-labs` | 实操：被诊断 & 货代擂台 | `lessons/fde/03-labs.md` | ①被 fde-pro 诚实诊断（缺 Echo 还是 Delta、够得着哪一层）②货代擂台亲手练一次摸真需求 | 实验课(fde-pro + fde-playground) |
 | 4 | `fde/04-four-cities-report` | 一线四城调查 | `lessons/fde/04-four-cities-report.md` | 说清中国 FDE"有生意没行业"的真实坐标、护城河为何是行业知识、怎么选切入点 | 讲授(文章) |
 
+## 共修课（与 AI Native 课共用 · 按需插入，不占正课序号）
+
+两门课共用的基础课放在 `lessons/shared/`，由各课大纲索引、按学生画像动态插入：
+
+| 课号 | 标题 | lesson 文件 | 目标（学生学完能……） | 类型 |
+|---|---|---|---|---|
+| `shared/github-01-what-is-github` | GitHub：AI 时代的协作语言 | `lessons/shared/github-01-what-is-github.md` | 不背命令，看懂 repo/commit/PR/issue/fork/merge 这套协作词汇，能读懂 diff、敢做验收 | 讲授(共修) |
+| `shared/github-02-lab-first-pr` | 实操：第一个 issue 和第一个 PR，就提在这所学校 | `lessons/shared/github-02-lab-first-pr.md` | 真实开出人生第一个 issue 和第一个 PR（提进 `HA7CH/ha7ch-school`），合并后名字上 `school.ha7ch.com/WALL.md` | 实验课(共修) |
+
+**什么时候插**（本课视角）：
+- **商务/产品/运营背景（Echo 强 Delta 弱）**是主要受众：这类学生十有八九没碰过 GitHub，而 FDE 的交付全落在 GitHub 上——在 03 实操**之前**插 G1+G2，别让他带着黑盒进擂台。
+- FDE 化的讲法要点：**issue = Echo 的落点**（客户嘴里的模糊需求变成一条条可追踪的需求台账），**PR = Delta 的交付单元**（每次交付都是一次"请过目"，diff 就是验收单）。讲 G1 时把这两句挂上。
+- 工程师背景真懂 Git → 跳过 G1；G2 当彩蛋推荐（顺手把 PR 提进你正在上的这所学校）。
+- 回扣点：G2 走完 fork→PR→review→merge→自动上线全流程后，问他"给客户交付时，这条流水线对应你和客户之间的什么"。
+
 ## 默认顺序
-01（是什么）→ 02（怎么做·九宫格）→ 03（把框架照到自己身上：先 fde-pro 诊断、再货代擂台练 Echo）→ 04（看清市场，决定要不要/怎么入局）。
+01（是什么）→ 02（怎么做·九宫格）→ 03（把框架照到自己身上：先 fde-pro 诊断、再货代擂台练 Echo）→ 04（看清市场，决定要不要/怎么入局）。共修 GitHub 课按上面的规则见缝插入（商务背景默认插在 03 前）。
 
 ## 自适应分支（按 pedagogy §1 头等原则：先从他强/熟的那块切入，把最弱的压到后面重点精讲）
 > FDE 的两块能力＝商务/摸需求(**Echo**) vs 技术/端到端构建(**Delta**)。先判他强哪块（对话或 fde-pro 诊断），从强的切入，把弱的压轴精讲——弱在 Delta 就跨去 AI Native 课重点补，弱在 Echo 就把货代擂台/见客户压到最后逼他练。

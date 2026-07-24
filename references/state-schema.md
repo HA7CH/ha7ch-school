@@ -50,7 +50,7 @@
 ## 字段说明
 - `level_read` / `pace`：摸底定初值，之后按 pedagogy 第四节的信号动态调，调了就写回。
 - `ability_profile`：**排课主轴**（见 pedagogy §1 头等原则）。摸底给初判，之后每测一次就更新——从 `strong` 那块切入、把 `weak` 那块压到后面重点精讲。FDE 学生可用 fde-pro 诊断结论直接填。
-- `lessons` 的 key 用 lesson 文件的相对路径（去掉 `references/lessons/` 前缀、去掉 `.md`），如 `ai-native/01-zero-token-design`、`fde/02-labs`。
+- `lessons` 的 key 用 lesson 文件的相对路径（去掉 `references/lessons/` 前缀、去掉 `.md`），如 `ai-native/01-zero-token-design`、`fde/03-labs`、`shared/github-01-what-is-github`。
 - `comprehension`：只有真测过才填；没测过填 JSON `null`（是字面量 `null`，不是字符串 `"null"`），别脑补。
 - `next_recommended`：动态排课的结果，回归时用它接上（但仍给学生否决权）。
 - `log`：一行一条流水，回归时能一眼看懂上次到哪。日期用真实当天日期。

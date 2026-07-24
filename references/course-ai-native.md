@@ -13,8 +13,23 @@
 | 3 | `ai-native/03-lab-cv-pro` | 实操：把简历变活 | `lessons/ai-native/03-lab-cv-pro.md` | 亲手用 cv.ha7ch.com 做出自己的活简历，体会 AI native 产品长什么样 | 实验课(cv-pro) |
 | 4 | `ai-native/04-ha7ch-picks` | 延伸：HA7CH 精选 | `lessons/ai-native/04-ha7ch-picks.md` | 顺着兴趣，再读几篇 HA7CH 的相关思考，把内核连成面 | 延伸阅读 |
 
+## 共修课（与 FDE 课共用 · 按需插入，不占正课序号）
+
+两门课共用的基础课放在 `lessons/shared/`，由各课大纲索引、按学生画像动态插入：
+
+| 课号 | 标题 | lesson 文件 | 目标（学生学完能……） | 类型 |
+|---|---|---|---|---|
+| `shared/github-01-what-is-github` | GitHub：AI 时代的协作语言 | `lessons/shared/github-01-what-is-github.md` | 不背命令，看懂 repo/commit/PR/issue/fork/merge 这套协作词汇，能读懂 diff、敢做验收 | 讲授(共修) |
+| `shared/github-02-lab-first-pr` | 实操：第一个 issue 和第一个 PR，就提在这所学校 | `lessons/shared/github-02-lab-first-pr.md` | 真实开出人生第一个 issue 和第一个 PR（提进 `HA7CH/ha7ch-school`），合并后名字上 `school.ha7ch.com/WALL.md` | 实验课(共修) |
+
+**什么时候插**（本课视角）：
+- 学生露出"不会 GitHub / 没账号 / 听不懂 PR、仓库是什么"的信号（尤其产品/商务/运营背景）→ 在 03 实操**之前**插 G1（+顺势 G2），别让他带着黑盒进实验课。
+- 03 做完、学生对"产品长在哪个生态上"来劲 → 插 G1 回答"cv-pro 这类零 token 产品为什么都长在 GitHub+npm 上"。
+- 工程师背景真懂 Git → 跳过 G1；G2 当彩蛋推荐（"把你的第一个……好吧，第 N 个 PR 提进你正在上的这所学校"）。
+- 回扣点：G1 的"merge 即上线"与 01 的零 token 生态前提互相印证——产品不烧 token，靠的就是这套公开协作与分发的基础设施。
+
 ## 默认顺序
-01 → 02 → 03（实操，前两节的理念在这里落地）→ 04（延伸，按兴趣可选）。
+01 → 02 → 03（实操，前两节的理念在这里落地）→ 04（延伸，按兴趣可选）。共修 GitHub 课按上面的规则见缝插入。
 
 ## 自适应分支（按 pedagogy §1 头等原则：先从他强/熟的那块切入，把最弱的压到后面重点精讲）
 > 这门课的两块能力＝理念理解 vs 动手构建。理论型的人先讲透 01/02 理念、把动手(03 实操)当压轴重点带；动手型的人先做 03 实操当钩子、再回补 01/02 理念。
