@@ -1,0 +1,38 @@
+{
+  "name": "@ha7ch/school",
+  "version": "1.1.0",
+  "description": "把 HA7CH AI Native School（AI Native / FDE 两门课 + 共修 GitHub 节点）一条命令装进 Claude Code / Codex 的 skill 目录",
+  "homepage": "https://school.ha7ch.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HA7CH/ha7ch-school.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "ha7ch-school": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "skill"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "prepare-skill": "node scripts/prepare-skill.mjs",
+    "prebuild": "npm run prepare-skill",
+    "build": "tsc",
+    "dev": "npm run prepare-skill && tsx src/index.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5",
+    "tsx": "^4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -2,6 +2,16 @@
 
 > 本页是给**正在运行的 AI agent**（Claude Code / Codex / 其它）读的安装说明。用户已让你安装 HA7CH School。请照下面把它装成本地 skill，再开始上课。别把本页当课程内容念给用户。
 
+## 第 0 步 · 最快路径：npx 一条命令（环境里有 node 就用这条）
+
+```bash
+npx -y @ha7ch/school@latest            # 自动探测装到 ~/.claude/skills/ha7ch-school
+npx -y @ha7ch/school@latest --codex    # 你是 Codex 就加 --codex
+npx -y @ha7ch/school@latest --force    # 已装过、想更新到最新
+```
+
+成功（打印 ✅ Installed）就直接跳到「第三步 · 开课」。没有 node / npx 跑不了，再走下面第一、二步手动下载。
+
 ## 第一步 · 确定装到哪个目录（按你是哪个 agent，你自己知道）
 
 - **Claude Code** → `~/.claude/skills/ha7ch-school/`
