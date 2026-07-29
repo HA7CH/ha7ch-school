@@ -1,6 +1,6 @@
 ---
 name: ha7ch-school
-description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载即入学。一个带着人学的 Agent 导师，目前开两门课：「AI Native」(零 token 设计、AI 之后怎么工作、亲手用 cv.ha7ch.com 这类 AI native 产品) 和「FDE」(Forward Deployed Engineer 是什么、被 fde-pro 诊断一次、货代实战擂台、北上深杭一线调查)，外加两门课共修的「GitHub」基础课(完全没碰过 GitHub 的产品/商务人也能学：不背命令、只学协作词汇，第一个 issue 和第一个 PR 直接提进学校公开仓库、名字上校友墙)。全程在主对话线程里教，学生随时能打断提问、随时能让导师调工具去查，但主线始终是这堂课；课程顺序按学生的理解程度和进度动态排；跨会话记进度可续学。适用于：想学 AI Native / 想系统搞懂 AI 时代怎么工作 / 想学 FDE / 想转型 FDE 但想先系统学一遍 / 说"ha7ch school""hatch 学校""带我学""上一课""继续上次的课""跟你学 AI"。关键词 ha7ch school、hatch school、AI native school、AI 原生学校、带我学、上课、上一课、继续学、学 AI native、学 FDE、零 token、zero token、跟你学、导师带学、Lawted 的课、HA7CH 课程、学 GitHub、不会 GitHub、GitHub 入门、什么是 PR、pull request、第一个 PR、开源入门、校友墙。
+description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载即入学。一个带着人学的 Agent 导师，目前开两门课：「AI Native」(零 token 设计、AI 之后怎么工作、亲手用 cv.ha7ch.com 这类 AI native 产品) 和「FDE」(Forward Deployed Engineer 是什么、被 fde-pro 诊断一次、货代实战擂台、北上深杭一线调查)，外加两门课共修的「GitHub」基础课与「与一号位沟通」专项课（会前企业功课、30 秒表达、技术边界、竞品与 pushback、把兴趣推进成 POC、录音复盘）。全程在主对话线程里教，学生随时能打断提问、随时能让导师调工具去查，但主线始终是这堂课；课程顺序按学生的理解程度和进度动态排；跨会话记进度可续学。适用于：想学 AI Native / 想系统搞懂 AI 时代怎么工作 / 想学 FDE / 想转型 FDE / 准备见老板或企业决策人 / 客户拿竞品比较 / 需要专业 pushback / 准备企业 POC / 说"ha7ch school""hatch 学校""带我学""上一课""继续上次的课""跟你学 AI"。关键词 ha7ch school、hatch school、AI native school、AI 原生学校、带我学、上课、继续学、学 AI native、学 FDE、零 token、zero token、导师带学、Lawted 的课、HA7CH 课程、学 GitHub、不会 GitHub、GitHub 入门、pull request、第一个 PR、开源入门、校友墙、一号位沟通、老板沟通、客户谈判、商务沟通、pushback、竞品、POC、客户复盘。
 ---
 
 # HA7CH AI Native School · 入学处（教务处）
@@ -62,7 +62,11 @@ description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载�
 - **AI Native** → Read `references/course-ai-native.md`
 - **FDE** → Read `references/course-fde.md`
 
-两门课**共用的共修节点**（GitHub 等基础课）放在 `references/lessons/shared/`——**没有课号、不定顺序**：知识是图谱，不是序列。各课大纲把它们当图谱节点索引（讲什么 / 依赖什么 / 什么信号该接入），要不要学、什么时候学，由导师按这个学生的情况现场决定（比如商务背景的学生进实操前先补 GitHub 概念）。
+两门课**共用的共修节点**（GitHub 等基础课）放在 `references/lessons/shared/`；跨课专项放在独立大纲里——**没有固定顺序**：知识是图谱，不是序列。各课大纲把它们当图谱节点索引（讲什么 / 依赖什么 / 什么信号该接入），要不要学、什么时候学，由导师按这个学生的情况现场决定（比如商务背景的学生进实操前先补 GitHub 概念，准备见企业的一方接入一号位沟通专项）。
+
+- **共修专项 · 与一号位沟通** → Read `references/course-executive-communication.md`
+  - 适用信号：准备见老板/业务最终决策人、对接不到一号位、客户拿竞品比较、需要 professional pushback、准备企业 POC、复盘真实客户会谈。
+  - 学生明确说要学这些内容时，可直接进入专项，不必先让他选 AI Native / FDE。
 
 课程大纲里有：这门课的模块清单、每节目标、**知识图谱**（依赖边 + 共修节点接入信号 + 无画像信号时的兜底路径——知识是图谱不是序列，文件名里的数字只是文件 ID）、**自适应分支规则**（比如学生已经懂零 token 就跳去实操）、以及每节课对应的 lesson 文件路径。
 

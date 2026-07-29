@@ -1,6 +1,6 @@
 {
   "name": "ha7ch-school",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "base": "https://school.ha7ch.com",
   "files": [
     {
@@ -14,6 +14,10 @@
     {
       "url": "references/course-fde.md",
       "dest": "references/course-fde.md"
+    },
+    {
+      "url": "references/course-executive-communication.md",
+      "dest": "references/course-executive-communication.md"
     },
     {
       "url": "references/lessons/ai-native/01-zero-token-design.md",
@@ -54,6 +58,34 @@
     {
       "url": "references/lessons/shared/github-lab-first-pr.md",
       "dest": "references/lessons/shared/github-lab-first-pr.md"
+    },
+    {
+      "url": "references/lessons/executive-communication/01-before-the-meeting.md",
+      "dest": "references/lessons/executive-communication/01-before-the-meeting.md"
+    },
+    {
+      "url": "references/lessons/executive-communication/02-in-the-room.md",
+      "dest": "references/lessons/executive-communication/02-in-the-room.md"
+    },
+    {
+      "url": "references/lessons/executive-communication/03-from-interest-to-pilot.md",
+      "dest": "references/lessons/executive-communication/03-from-interest-to-pilot.md"
+    },
+    {
+      "url": "references/executive-communication/methods.md",
+      "dest": "references/executive-communication/methods.md"
+    },
+    {
+      "url": "references/executive-communication/scenarios.md",
+      "dest": "references/executive-communication/scenarios.md"
+    },
+    {
+      "url": "references/executive-communication/rubric.md",
+      "dest": "references/executive-communication/rubric.md"
+    },
+    {
+      "url": "references/executive-communication/retro-template.md",
+      "dest": "references/executive-communication/retro-template.md"
     },
     {
       "url": "references/pedagogy.md",
