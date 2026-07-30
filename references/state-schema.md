@@ -19,7 +19,7 @@
   "name": "学生怎么称呼自己(可空)",
   "enrolled": "2026-07-17",
   "last_seen": "2026-07-17",
-  "current_course": "ai-native | fde | null",
+  "current_course": "ai-native | fde | executive-communication | null",
   "level_read": "beginner | intermediate | advanced",
   "pace": "slow | normal | fast",
   "ability_profile": {
@@ -48,6 +48,7 @@
 ```
 
 ## 字段说明
+- `current_course`：正课填 `ai-native` / `fde`。`executive-communication` 是跨课专项，两种情况都可能出现在这里：学生直接说要练一号位沟通（此时它就是当前主线），或从正课中途接入专项（接入期间填它，回到正课时改回去，正课进度都在 `lessons` 里不会丢）。
 - `level_read` / `pace`：摸底定初值，之后按 pedagogy 第四节的信号动态调，调了就写回。
 - `ability_profile`：**排课主轴**（见 pedagogy §1 头等原则）。摸底给初判，之后每测一次就更新——从 `strong` 那块切入、把 `weak` 那块压到后面重点精讲。FDE 学生可用 fde-pro 诊断结论直接填。
 - `lessons` 的 key 用 lesson 文件的相对路径（去掉 `references/lessons/` 前缀、去掉 `.md`），如 `ai-native/01-zero-token-design`、`fde/03-labs`、`shared/github-concepts`。
