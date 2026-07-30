@@ -29,6 +29,7 @@ WHAT THIS DOES
 
 AFTER INSTALL
   Start a new session in your agent, then say 「带我学 AI Native」/「想学 FDE」
+  /「带我练一号位沟通」
   or run /ha7ch-school (Claude Code) to enroll.
 `;
 
@@ -101,7 +102,7 @@ function main() {
   console.log(`✅ Installed HA7CH AI Native School (v${pkg.version}) to:`);
   console.log(`   ${target}`);
   console.log("");
-  console.log("Start a new session in your agent, then say 「带我学 AI Native」/「想学 FDE」");
+  console.log("Start a new session in your agent, then say 「带我学 AI Native」/「想学 FDE」/「带我练一号位沟通」");
   console.log("or run /ha7ch-school (Claude Code) to enroll.");
 }
 

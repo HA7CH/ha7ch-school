@@ -21,12 +21,15 @@
 |---|---|---|---|
 | `shared/github-concepts`（概念课） | `lessons/shared/github-concepts.md` | 不背命令，看懂 repo/commit/PR/issue/fork/merge 这套协作词汇，能读懂 diff、敢做验收 | 无 |
 | `shared/github-lab-first-pr`（实验课） | `lessons/shared/github-lab-first-pr.md` | 真实开出人生第一个 issue 和第一个 PR（提进 `HA7CH/ha7ch-school`），合并后名字上 `school.ha7ch.com/WALL.md` | 六个词的理解——通常来自概念课；真懂 Git 的现场 30 秒补齐即可直接做 |
+| `executive-communication`（专项课） | `course-executive-communication.md` | 把 AI 技术翻译成企业产品机会，并与一号位推进低风险验证 | 已有一个 AI native 产品/能力准备带进企业时 |
 
 **接入信号（本课视角）**：
 - 学生露出"不会 GitHub / 没账号 / 听不懂 PR、仓库是什么"的信号（尤其产品/商务/运营背景）→ 先走概念课（顺势接实验课），别让他带着黑盒进 03 的 cv-pro 实操。
 - 03 做完、学生对"产品长在哪个生态上"来劲 → 概念课正好回答"cv-pro 这类零 token 产品为什么都长在 GitHub+npm 上"。
 - 工程师背景真懂 Git → 概念课不用上；实验课当彩蛋推荐（"把你的第一个……好吧，第 N 个 PR 提进你正在上的这所学校"）。
 - 回扣边：概念课的"merge 即上线"与 01 的零 token 生态前提互相印证——产品不烧 token，靠的就是这套公开协作与分发的基础设施。
+- 学生开始问“怎么把这个能力卖给企业 / 怎么见老板 / 怎么讲案例 / 怎么做 POC” → 接入一号位沟通专项。
+- AI Native 化回扣：不能只说“我会做 Agent”，必须说清企业哪个环节、哪个角色、什么问题、产品形态和验证指标。
 
 ## 图谱与兜底路径
 文件名里的数字只是文件 ID，不是规定顺序——排课始终由导师按学生画像在图上现选（见 pedagogy §1）。依赖边：02 建在 01 的概念上；03 实操是 01/02 理念的落地（也允许先做当钩子、再回补理念）；04 是延伸，随时可接。**没有任何画像信号时的兜底走法**：01 → 02 → 03 → 04，共修 GitHub 节点按上面的信号接入。

@@ -1,7 +1,7 @@
 {
   "name": "@ha7ch/school",
-  "version": "1.1.0",
-  "description": "把 HA7CH AI Native School（AI Native / FDE 两门课 + 共修 GitHub 节点）一条命令装进 Claude Code / Codex 的 skill 目录",
+  "version": "1.2.0",
+  "description": "把 HA7CH AI Native School（AI Native / FDE + GitHub 与一号位沟通共修）一条命令装进 Claude Code / Codex",
   "homepage": "https://school.ha7ch.com",
   "repository": {
     "type": "git",

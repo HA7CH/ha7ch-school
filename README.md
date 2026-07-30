@@ -34,6 +34,14 @@
 - **概念课｜GitHub：AI 时代的协作语言** —— repo / commit / branch+PR / issue / fork / merge 即上线，六个词讲透。
 - **实验课｜第一个 issue 和第一个 PR，就提在这所学校** —— 真实 fork 本仓库、把名字写上校友墙 [`WALL.md`](WALL.md)，合并那一刻 [school.ha7ch.com/WALL.md](https://school.ha7ch.com/WALL.md) 自动上线你的名字。**学校自己就是教具。**
 
+### 共修专项 · 与一号位沟通
+给准备进入企业、面对老板或业务最终决策人的学生补上商务推进能力。不是背销售话术，而是完成三个真实动作：
+- **会前**：以价值伙伴心态做企业功课，把技术变成具体产品机会，练好 30 秒表达。
+- **会中**：用事实建立信任，处理技术边界、竞品、犹豫与专业 pushback。
+- **会后**：判断真实意愿，把兴趣推进成有数据、指标、负责人和停止条件的 POC，并复盘真实沟通。
+
+它不单独占一个入学选项，由 AI Native / FDE 课程按学生是否准备见企业、接项目或进入现场动态接入；也可以直接说「带我练一号位沟通」「客户拿竞品压我怎么办」进入。
+
 ## 安装
 
 最快是一条 npx：
@@ -60,11 +68,14 @@ references/
   state-schema.md              学习存档格式（跨会话续学）
   course-ai-native.md          AI Native 课程大纲 + 自适应分支
   course-fde.md                FDE 课程大纲 + 自适应分支
+  course-executive-communication.md  共修专项：与一号位沟通
   sources.md                   全部 source 清单（文章 URL / 本地素材 / 实操产品）
   lessons/
     ai-native/                 4 节讲义
     fde/                       4 节讲义
     shared/                    共修课讲义（GitHub ×2，两门课共用）
+    executive-communication/   3 节讲义（会前 / 会中 / 企业试点）
+  executive-communication/    方法、场景、评分与复盘模板
 ```
 
 每节讲义都锚定真实素材：HA7CH 的原文文章、Lawted 本人的口播稿、以及真产品。
