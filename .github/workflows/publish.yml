@@ -1,0 +1,65 @@
+# 打 tag 就发包：git tag v1.3.1 && git push origin v1.3.1
+#
+# 为什么必须自动化：托管站（school.ha7ch.com）随 master 合并由 Vercel 立刻部署，
+# 而 npm 以前要人手动 npm publish。两者之间的窗口期里，已装的学生自检会发现
+# 「本地落后于线上」→ 跑 npx --force → 装回同一个旧版本 → 下次开课再来一遍。
+# 打 tag 即发把这个窗口压到一次 CI 的时间。
+
+name: publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # npm provenance（在 npm 页面上标记「已验证来源」）
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      # tag 是唯一真相，必须和两处版本完全一致。
+      # 三者一旦错位，学生装完自检仍判定落后 → 每次开课都重装（死循环）。
+      - name: 校验 tag 与 manifest.json / cli/package.json 版本一致
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          MANIFEST=$(node -p "require('./manifest.json').version")
+          PKG=$(node -p "require('./cli/package.json').version")
+          echo "tag=$TAG  manifest.json=$MANIFEST  cli/package.json=$PKG"
+          if [ "$TAG" != "$MANIFEST" ] || [ "$TAG" != "$PKG" ]; then
+            echo "::error::版本错位 — tag=$TAG, manifest.json=$MANIFEST, cli/package.json=$PKG。三者必须相同，否则学生装完仍被判定为旧版。"
+            exit 1
+          fi
+
+      - name: 安装依赖
+        working-directory: cli
+        run: npm ci
+
+      # npm publish 会自动跑 prepublishOnly → build → prepare-skill，
+      # prepare-skill 里还有一道 manifest 与 package.json 的版本校验兜底。
+      - name: 发布到 npm
+        working-directory: cli
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 复查 npm 上的版本
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          for i in 1 2 3 4 5; do
+            LIVE=$(npm view @ha7ch/school version 2>/dev/null || echo "")
+            [ "$LIVE" = "$TAG" ] && { echo "✅ npm 已是 $LIVE"; exit 0; }
+            echo "npm 当前 $LIVE，等待 registry 同步…（第 $i 次）"
+            sleep 10
+          done
+          echo "::error::发布后 npm 上仍不是 $TAG"
+          exit 1
