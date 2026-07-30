@@ -23,9 +23,11 @@ OPTIONS
   -v, --version    Show version
 
 WHAT THIS DOES
-  Copies the ha7ch-school skill (SKILL.md + references/) into your
-  agent's local skills directory. Everything needed ships inside this
-  package — no account, no extra network calls at install time.
+  Copies the ha7ch-school skill (SKILL.md + manifest.json + references/)
+  into your agent's local skills directory. Everything needed ships inside
+  this package — no account, no extra network calls at install time.
+  After this, your tutor checks for course updates before each class and
+  refreshes itself when it finds one — you never have to re-run this.
 
 AFTER INSTALL
   Start a new session in your agent, then say 「带我学 AI Native」/「想学 FDE」

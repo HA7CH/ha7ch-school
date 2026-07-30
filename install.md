@@ -25,7 +25,8 @@ npx -y @ha7ch/school@latest --force    # 已装过、想更新到最新
 1. **拿清单**：`curl -fsSL https://school.ha7ch.com/manifest.json`。`files` 每项有 `url`（相对 `https://school.ha7ch.com`）和 `dest`（相对 `<DIR>`）。
 2. **逐个下载**：先 `mkdir -p` 每个 dest 的父目录，再 `curl -fsSL https://school.ha7ch.com/<url> -o <DIR>/<dest>`。
    - ⚠️ 关键：`school.md` 的 dest 是 `SKILL.md`（入口必须叫 SKILL.md）。
-3. **校验**：`<DIR>/SKILL.md` 存在，且 `references/` 下的文件数与 manifest 中除 `school.md` 外的条目数一致（当前 23 个 `.md`）。
+   - ⚠️ `manifest.json` 自己也在清单里，**必须一起装**——它是学生下次开课时自检版本的基准，漏了就永远收不到课程更新。
+3. **校验**：`<DIR>/SKILL.md` 和 `<DIR>/manifest.json` 都存在，且 `references/` 下的文件数与 manifest 中除 `school.md`、`manifest.json` 外的条目数一致（当前 23 个 `.md`）。
 
 ## 第三步 · 开课
 
@@ -37,4 +38,6 @@ npx -y @ha7ch/school@latest --force    # 已装过、想更新到最新
 让用户任何时候贴这句：**「读 https://school.ha7ch.com/school.md ，带我上课」**——你 `curl` 取 `school.md` 照它开讲即可。
 
 ---
-学习进度自动存 `~/.ha7ch-school/{handle}.json`，跨会话续学。更新课程：重跑本安装即可（覆盖成最新）。
+学习进度自动存 `~/.ha7ch-school/{handle}.json`，跨会话续学。
+
+**课程更新不用学生操心**：装好之后，每次开课前导师会自己比对本地与线上 `manifest.json` 的版本，落后就自动更新再上课（见 `SKILL.md` §〇 第 0 步）。手动更新也行：重跑本安装或 `npx -y @ha7ch/school@latest --force`。

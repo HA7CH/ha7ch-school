@@ -1,11 +1,15 @@
 {
   "name": "ha7ch-school",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "base": "https://school.ha7ch.com",
   "files": [
     {
       "url": "school.md",
       "dest": "SKILL.md"
+    },
+    {
+      "url": "manifest.json",
+      "dest": "manifest.json"
     },
     {
       "url": "references/course-ai-native.md",
