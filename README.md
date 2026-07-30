@@ -86,6 +86,22 @@ references/
 
 `~/.ha7ch-school/{handle}.json`（单机本地，各自机器存各自的，互不干扰）。
 
+## 发版（维护者）
+
+课程走两条分发路径，**必须同时更新**：托管站（`school.ha7ch.com`，随 master 合并由 Vercel 自动部署）和 npm（`@ha7ch/school`）。两者版本一旦错开，已装的学生自检会判定落后、反复重装。
+
+所以改完课程后：
+
+```bash
+# 1. 三处版本一起改：manifest.json、cli/package.json、cli/package-lock.json
+#    (cd cli && npm version 1.3.1 --no-git-tag-version 管后两个)
+# 2. 合并进 master —— 托管站此刻自动更新
+# 3. 打 tag，npm 由 GitHub Actions 自动发布
+git tag v1.3.1 && git push origin v1.3.1
+```
+
+tag 名必须是 `v` + 版本号，且与 `manifest.json`、`cli/package.json` 完全一致——workflow 第一步就校验，不一致直接失败。需要仓库配好 `NPM_TOKEN` secret（npm 的 Automation token）。
+
 ---
 
 Made by HA7CH · 让每个人都能跟着懂行的人，学会在 AI 时代真正地工作。
