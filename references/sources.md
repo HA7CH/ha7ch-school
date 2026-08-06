@@ -51,6 +51,16 @@
 
 本专项的核心判断来自 HA7CH 的企业现场经验，麦肯锡方法只用来补结构，不能覆盖或冲淡一线判断。
 
+## 现场素材（素材层，**导师不主动读**）
+
+| source | 类型 | 状态 |
+|---|---|---|
+| `material/fde-pro-meetup-s26.md` — 某场 FDE 专场交流会现场记录 | 现场转录蒸馏 | **未编入任何讲义，导师上课时不读** |
+
+**这一节是素材，不是课。** 上课一律以 `lessons/` 下的讲义为准；本节文件**不在授课路径上**，也不进 `manifest.json`、不 bump version（动 version 会触发全体学生端自检重装）。素材同时被 `cli/scripts/prepare-skill.mjs` 排除，不随 npm 包分发。
+
+要把其中某条升级成正式课程内容，需人工判断后走完整发版流程（写进 lesson → 更新 manifest → 同步三处版本号 → 打 tag）。**在那之前，素材里的做法不代表本校的教法**——该文件第二节就是一个明确标注的反面案例。
+
 ## 实操产品/项目一览（"skill 里面套 skill"要拉起的东西）
 - `cv-pro` —— AI native 在线简历，cv.ha7ch.com。装在 `~/.claude/skills/cv-pro/`。
 - `fde-pro` —— FDE 适配诊断器，fde.ha7ch.com。装在 `~/.claude/skills/fde-pro/`。

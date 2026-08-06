@@ -1,6 +1,7 @@
 // Copies the repo's skill content (SKILL.md + manifest.json + references/) into cli/skill/
 // so it ships inside the published npm package. Runs before every build.
-// references/harvest/ 是采集工作区，不属于课程内容，不打进包。
+// references/harvest/ 是采集工作区，references/material/ 是未编入讲义的现场素材；
+// 两者都不属于课程内容，不打进包（素材未经课程化，直接发到学生本机会被误当教法）。
 // manifest.json 必须一起装：它是学生本地「开课前自检」的版本基准（见 SKILL.md §〇 第 0 步）。
 import { cpSync, rmSync, existsSync, mkdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -15,6 +16,7 @@ const skillMdSrc = join(repoRoot, "SKILL.md");
 const referencesSrc = join(repoRoot, "references");
 const manifestSrc = join(repoRoot, "manifest.json");
 const harvestDir = join(referencesSrc, "harvest");
+const materialDir = join(referencesSrc, "material");
 
 if (!existsSync(skillMdSrc) || !existsSync(referencesSrc) || !existsSync(manifestSrc)) {
   console.error(`prepare-skill: expected ${skillMdSrc}, ${referencesSrc} and ${manifestSrc} to exist — run this from the ha7ch-school repo.`);
@@ -39,7 +41,7 @@ cpSync(skillMdSrc, join(dest, "SKILL.md"));
 cpSync(manifestSrc, join(dest, "manifest.json"));
 cpSync(referencesSrc, join(dest, "references"), {
   recursive: true,
-  filter: (src) => !src.startsWith(harvestDir),
+  filter: (src) => !src.startsWith(harvestDir) && !src.startsWith(materialDir),
 });
 
 console.log(`prepare-skill: bundled skill content (v${manifestVersion}) into ${dest}`);
