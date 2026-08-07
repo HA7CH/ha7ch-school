@@ -1,0 +1,12 @@
+# 仓库根目录即 school.ha7ch.com 的站点根，references/ 下的文件会被公开托管
+# （vercel.json 还给所有 .md 加了 Access-Control-Allow-Origin: *）。
+# 下面两个目录不是课程内容，不该对外可取：
+#
+#   references/material/ —— 未编入讲义的现场素材。未经课程化的原始蒸馏
+#                            直接公开，会被当成本校的教法引用。
+#   references/harvest/  —— 采集工作区。
+#
+# 这两个目录同时也被 cli/scripts/prepare-skill.mjs 排除出 npm 包。
+# 两处排除必须一起维护：npm 那条只挡住装到学生本机的路径，挡不住站点托管。
+references/material/
+references/harvest/
