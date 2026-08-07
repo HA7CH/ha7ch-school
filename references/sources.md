@@ -24,7 +24,7 @@
 |---|---|---|---|
 | 01 | Lawted 本人口播稿/访谈（本地归档，下详） | 口播稿 | Read |
 | 02 | 《一张图看懂 FDE 到底怎么做（FDE 九宫格）》口播稿+原图（本地归档，位置同 01） | 口播稿 | Read |
-| 03 | `fde-pro` skill（`~/.claude/skills/fde-pro/SKILL.md`）＋ `~/dev/fde-playground`（货代擂台） | skill+本地项目 | `Skill(fde-pro)`；playground 本地 `npm run dev` |
+| 03 | School 内置 `references/skills/fde-diagnosis/SKILL.md`（源自 `HA7CH/fde-pro`）＋ `~/dev/fde-playground`（货代擂台） | 校内 skill+本地项目 | 按运行模式 `Read` / `WebFetch`；playground 本地 `npm run dev` |
 | 04 | https://www.ha7ch.com/writing/four-cities-fde-report | 文章 | WebFetch |
 
 **01 口播稿归档位置**：`~/Documents/Lawted's-Video/小红书全量归档_2026-07-13/`
@@ -63,7 +63,7 @@
 
 ## 实操产品/项目一览（"skill 里面套 skill"要拉起的东西）
 - `cv-pro` —— AI native 在线简历，cv.ha7ch.com。装在 `~/.claude/skills/cv-pro/`。
-- `fde-pro` —— FDE 适配诊断器，fde.ha7ch.com。装在 `~/.claude/skills/fde-pro/`。
+- `fde-diagnosis` —— FDE 适配诊断器，已经内置在 School；旧 `fde-pro` 仓库与 `fde.ha7ch.com` 只做兼容维护。
 - `fde-playground` —— 货代实战擂台（Phase 1 摸需求前门）。`~/dev/fde-playground`，本地起服务。
 
 ## 注意

@@ -26,7 +26,7 @@ npx -y @ha7ch/school@latest --force    # 已装过、想更新到最新
 2. **逐个下载**：先 `mkdir -p` 每个 dest 的父目录，再 `curl -fsSL https://school.ha7ch.com/<url> -o <DIR>/<dest>`。
    - ⚠️ 关键：`school.md` 的 dest 是 `SKILL.md`（入口必须叫 SKILL.md）。
    - ⚠️ `manifest.json` 自己也在清单里，**必须一起装**——它是学生下次开课时自检版本的基准，漏了就永远收不到课程更新。
-3. **校验**：`<DIR>/SKILL.md` 和 `<DIR>/manifest.json` 都存在，且 `references/` 下的文件数与 manifest 中除 `school.md`、`manifest.json` 外的条目数一致（当前 23 个 `.md`）。
+3. **校验**：`<DIR>/SKILL.md` 和 `<DIR>/manifest.json` 都存在，且 `references/` 下的文件数与 manifest 中除 `school.md`、`manifest.json` 外的条目数一致（当前 25 个 `.md`）。
 
 ## 第三步 · 开课
 

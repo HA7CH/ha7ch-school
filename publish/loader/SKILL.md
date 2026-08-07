@@ -1,6 +1,6 @@
 ---
 name: ha7ch-school
-description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载即入学。一个带着人学的 Agent 导师，目前开两门课：「AI Native」(零 token 设计、AI 之后怎么工作、亲手用 cv.ha7ch.com 这类 AI native 产品) 和「FDE」(Forward Deployed Engineer 是什么、被 fde-pro 诊断一次、货代实战擂台、北上深杭一线调查)。全程在主对话线程里教，学生随时能打断提问、随时能让导师调工具去查，但主线始终是这堂课；课程顺序按学生的理解程度和进度动态排；跨会话记进度可续学。适用于：想学 AI Native / 想系统搞懂 AI 时代怎么工作 / 想学 FDE / 想转型 FDE 但想先系统学一遍 / 说"ha7ch school""hatch 学校""带我学""上一课""继续上次的课""跟你学 AI"。关键词 ha7ch school、hatch school、AI native school、AI 原生学校、带我学、上课、上一课、继续学、学 AI native、学 FDE、零 token、zero token、跟你学、导师带学、Lawted 的课、HA7CH 课程。
+description: HA7CH AI Native School 在线加载器——把学生接到 school.ha7ch.com 的活课程。FDE 课程内置诚实诊断 Skill，不需要另装 fde-pro；同时包含 AI Native、GitHub 共修与一号位沟通专项。适用于想系统学 AI Native、FDE、判断自己适不适合做 FDE，或说“ha7ch school”“带我学”“上一课”“继续学”。
 ---
 
 # HA7CH AI Native School（在线加载器）

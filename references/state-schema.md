@@ -25,7 +25,7 @@
   "ability_profile": {
     "strong": "他强/熟的那块(如 商务·沟通·业务 / 技术·端到端构建)——从这儿切入",
     "weak": "他最弱、要压到后面重点精讲的那块",
-    "basis": "依据(摸底自述 / 某次测出来的 / fde-pro 诊断=缺Delta)"
+    "basis": "依据(摸底自述 / 某次测出来的 / 校内 FDE 诊断=缺Delta)"
   },
   "interests": ["学生明显更来劲的方向，用于动态排课"],
   "lessons": {
@@ -50,7 +50,7 @@
 ## 字段说明
 - `current_course`：正课填 `ai-native` / `fde`。`executive-communication` 是跨课专项，两种情况都可能出现在这里：学生直接说要练一号位沟通（此时它就是当前主线），或从正课中途接入专项（接入期间填它，回到正课时改回去，正课进度都在 `lessons` 里不会丢）。
 - `level_read` / `pace`：摸底定初值，之后按 pedagogy 第四节的信号动态调，调了就写回。
-- `ability_profile`：**排课主轴**（见 pedagogy §1 头等原则）。摸底给初判，之后每测一次就更新——从 `strong` 那块切入、把 `weak` 那块压到后面重点精讲。FDE 学生可用 fde-pro 诊断结论直接填。
+- `ability_profile`：**排课主轴**（见 pedagogy §1 头等原则）。摸底给初判，之后每测一次就更新——从 `strong` 那块切入、把 `weak` 那块压到后面重点精讲。FDE 学生可用校内 FDE 诊断结论直接填。
 - `lessons` 的 key 用 lesson 文件的相对路径（去掉 `references/lessons/` 前缀、去掉 `.md`），如 `ai-native/01-zero-token-design`、`fde/03-labs`、`shared/github-concepts`。
 - `comprehension`：只有真测过才填；没测过填 JSON `null`（是字面量 `null`，不是字符串 `"null"`），别脑补。
 - `next_recommended`：动态排课的结果，回归时用它接上（但仍给学生否决权）。
@@ -58,4 +58,4 @@
 
 ## 注意
 - 这是**单机本地**存档：将来别人装了这个 skill，各自机器上存各自的进度，互不干扰。
-- 不往里存简历、隐私长文；那些交给 cv-pro / fde-pro 自己的存储。这里只存"学到哪、懂多少"。
+- 不往里存简历、隐私长文；外部产品按各自存储规则处理，校内 FDE 诊断只读输入、不把简历写进学习档案。这里只存"学到哪、懂多少"。

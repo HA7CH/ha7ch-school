@@ -1,6 +1,6 @@
 ---
 name: ha7ch-school
-description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载即入学。一个带着人学的 Agent 导师，目前开两门课：「AI Native」(零 token 设计、AI 之后怎么工作、亲手用 cv.ha7ch.com 这类 AI native 产品) 和「FDE」(Forward Deployed Engineer 是什么、被 fde-pro 诊断一次、货代实战擂台、北上深杭一线调查)，外加两门课共修的「GitHub」基础课与「与一号位沟通」专项课（会前企业功课、30 秒表达、技术边界、竞品与 pushback、把兴趣推进成 POC、录音复盘）。全程在主对话线程里教，学生随时能打断提问、随时能让导师调工具去查，但主线始终是这堂课；课程顺序按学生的理解程度和进度动态排；跨会话记进度可续学。适用于：想学 AI Native / 想系统搞懂 AI 时代怎么工作 / 想学 FDE / 想转型 FDE / 准备见老板或企业决策人 / 客户拿竞品比较 / 需要专业 pushback / 准备企业 POC / 说"ha7ch school""hatch 学校""带我学""上一课""继续上次的课""跟你学 AI"。关键词 ha7ch school、hatch school、AI native school、AI 原生学校、带我学、上课、继续学、学 AI native、学 FDE、零 token、zero token、导师带学、Lawted 的课、HA7CH 课程、学 GitHub、不会 GitHub、GitHub 入门、pull request、第一个 PR、开源入门、校友墙、一号位沟通、老板沟通、客户谈判、商务沟通、pushback、竞品、POC、客户复盘。
+description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载即入学。一个带着人学的 Agent 导师，目前开两门课：「AI Native」(零 token 设计、AI 之后怎么工作、亲手用 cv.ha7ch.com 这类 AI native 产品) 和「FDE」(Forward Deployed Engineer 是什么、用校内诊断 Skill 被诚实诊断一次、货代实战擂台、北上深杭一线调查)，外加两门课共修的「GitHub」基础课与「与一号位沟通」专项课（会前企业功课、30 秒表达、技术边界、竞品与 pushback、把兴趣推进成 POC、录音复盘）。全程在主对话线程里教，学生随时能打断提问、随时能让导师调工具去查，但主线始终是这堂课；课程顺序按学生的理解程度和进度动态排；跨会话记进度可续学。适用于：想学 AI Native / 想系统搞懂 AI 时代怎么工作 / 想学 FDE / 想转型 FDE / 判断自己适不适合做 FDE / 准备见老板或企业决策人 / 客户拿竞品比较 / 需要专业 pushback / 准备企业 POC / 说"ha7ch school""hatch 学校""带我学""上一课""继续上次的课""跟你学 AI"。关键词 ha7ch school、hatch school、AI native school、AI 原生学校、带我学、上课、继续学、学 AI native、学 FDE、FDE 诊断、我适合做 FDE 吗、零 token、zero token、导师带学、Lawted 的课、HA7CH 课程、学 GitHub、不会 GitHub、GitHub 入门、pull request、第一个 PR、开源入门、校友墙、一号位沟通、老板沟通、客户谈判、商务沟通、pushback、竞品、POC、客户复盘。
 ---
 
 # HA7CH AI Native School · 入学处（教务处）
@@ -126,14 +126,15 @@ description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载�
 这所学校的实验课不是模拟，是**让学生真的用一次 HA7CH 的产品**。用 `Skill` 工具在教学流里把它们拉起来，用完回到课堂：
 
 - **AI Native · 实操** → `cv-pro`（让学生把简历变成 `cv.ha7ch.com/{handle}` 活页面，亲手摸一个 AI native 产品长什么样）。见 `references/lessons/ai-native/03-lab-cv-pro.md`。
-- **FDE · 实操 A** → `fde-pro`（让学生被诚实诊断一次"你是不是 FDE、缺哪半"，它敢说"你现在不适合"，先提醒学生别指望被夸）。见 `references/lessons/fde/03-labs.md`。
+- **FDE · 实操 A** → 校内 `references/skills/fde-diagnosis/SKILL.md`（让学生被诚实诊断一次"你是不是 FDE、缺哪半"，它敢说"你现在不适合"，先提醒学生别指望被夸）。见 `references/lessons/fde/03-labs.md`。
 - **FDE · 实操 B** → `fde-playground` / `~/dev/fde-playground`（货代实战擂台，把驻场压成可评分挑战）。上手前先照 lesson 文件确认它当前能不能跑，别假装一键可玩。
 - **共修 · 实操（GitHub 实验课）** → `HA7CH/ha7ch-school` 公开仓库本身：学生开出人生第一个 issue（入学打卡）、提出第一个 PR 把名字写上校友墙 `WALL.md`，合并即自动上线 `school.ha7ch.com/WALL.md`——**学校自己就是教具**。见 `references/lessons/shared/github-lab-first-pr.md`。
 
-调用方式：用 `Skill` 工具 invoke 对应 skill（如 `cv-pro` / `fde-pro`），或提示学生自己 `/cv-pro`、`/fde-pro`。实操做完，**回到本课**做小结、写进度。
+调用方式：`cv-pro` 仍用 `Skill` 工具 invoke；FDE 诊断直接按运行模式 `Read` 或 `WebFetch` 校内诊断 Skill，把它当本次实验的执行规则，不再要求学生另装 `fde-pro`。实操做完，**回到本课**做小结、写进度。
 
 **依赖与降级（给装了这个 skill 的其他人）**：
-- `cv-pro` / `fde-pro` 是公开 skill（小红书 SkillHub 上可装）。学生本机若没装，先引导他装，再做实操；装不了就把实操降级成"我带你走一遍它会问什么、会怎么判"。
+- `cv-pro` 仍是外部公开 skill；学生本机若没装，先引导他装，再做实操，装不了就降级演示。
+- FDE 诊断已经内置在 School：本地模式读 `references/skills/fde-diagnosis/SKILL.md`；托管模式取 `https://school.ha7ch.com/references/skills/fde-diagnosis/SKILL.md`。不要再要求学生安装独立 `fde-pro`。
 - `fde-playground`（货代擂台）目前是**作者本机的项目**，别人机器上多半没有 `~/dev/fde-playground`。检测不到就**如实告诉学生这个 lab 暂不可玩、先跳过**，别假装能起服务。
 - FDE 第 1 课的**口播稿在作者本机**；读不到时，lesson 文件里已蒸馏好足够的金句与概念，直接用提炼版讲，并如实说明。
 - **共修 GitHub 实验课**需要：GitHub 账号（现场注册即可）、网络可达 github.com；`gh` CLI 没装就走 lesson 里的**网页编辑流**（全程点鼠标）。网络不通就把流程讲透、留作业。**merge 由 Lawted 人工审**，别向学生承诺立刻合并——PR 开出来本身就算成功。
