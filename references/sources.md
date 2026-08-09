@@ -56,6 +56,7 @@
 | source | 类型 | 状态 |
 |---|---|---|
 | 某场 FDE 专场交流会现场记录（仓库内 `references/material/`，**学生机上不存在**） | 现场转录蒸馏 | **未编入任何讲义，导师上课时不读，也不要尝试 Read** |
+| Lawted 2026-08-03 至 2026-08-09 小红书公开现场笔记（`references/material/lawted-xhs-field-notes-2026-08.md`，**学生机上不存在**） | 公开内容蒸馏 | **已去客户身份并标注机器证据边界；未编入任何讲义，导师上课时不读** |
 
 **这一节是素材，不是课。** 上课一律以 `lessons/` 下的讲义为准；本节文件**不在授课路径上**，也不进 `manifest.json`、不 bump version（动 version 会触发全体学生端自检重装）。素材被**两处**排除：`cli/scripts/prepare-skill.mjs` 挡住 npm 包（装不到学生本机），`.vercelignore` 挡住站点部署（`school.ha7ch.com` 上取不到）。两处必须一起维护——只挡 npm 挡不住公开托管。
 
