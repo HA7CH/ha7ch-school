@@ -3,7 +3,7 @@
   "git": {
     "deploymentEnabled": {
       "master": true,
-      "*": false
+      "**": false
     }
   },
   "cleanUrls": false,
