@@ -28,15 +28,17 @@
 
 ### 第 1 步 · 第一个 issue：入学打卡
 1. 问学生想留什么话（从哪来、想学什么、想对学校说一句什么——三行以内，别写作文）。
-2. 你来跑（内容用学生的话，别替他编）：
+2. 你来跑（内容用学生的话，别替他编），并立刻保存返回的 Issue URL 和编号——后面开 PR 时必须引用：
    ```
-   gh issue create --repo HA7CH/ha7ch-school \
+   ISSUE_URL=$(gh issue create --repo HA7CH/ha7ch-school \
      --title "[入学打卡] {学生的名字或handle}" \
      --body "从哪来：…
    想学什么：…
-   想说的：…"
+   想说的：…")
+   ISSUE_NUMBER=${ISSUE_URL##*/}
+   echo "$ISSUE_URL"
    ```
-   （正文三行都用学生的原话；引号里用真实换行，别写 `\n`——bash 不会把它变成换行。）
+   （正文三行都用学生的原话；引号里用真实换行，别写 `\n`——bash 不会把它变成换行。确认 `ISSUE_NUMBER` 是纯数字再继续；如果会话中断，重新从 Issue URL 取编号，不能猜。）
 3. 把返回的 issue URL 给学生**自己点开看**，然后解说："你刚在一个公开项目里，发出了你的第一条正式协作记录。它有编号、有你的名字、全网可见、永久可查——这就是'公开台账'。"
 4. **FDE 课学生加一句**：你刚干的事，缩小一万倍就是 FDE 的日常——把嘴里的话变成一条可追踪的 issue。Lawted 的原话："……把这种极其模糊的需求逐渐梳理成明确的工作流，再变成 GitHub Issue，最后才变成生产级别的代码。"
 
@@ -47,12 +49,21 @@
 2. **branch（平行草稿）**：`git checkout -b wall/{学生handle}` → "现在开了一份**平行草稿**，名字叫 `wall/{handle}`。接下来怎么改都动不到正本——这就是 branch 存在的意义。"
 3. **改**：打开 `WALL.md`，照文件里写明的格式，在**末尾追加一行**（日期用今天、@学生的 username、一句话用他自己的话）。改完把这一行念给学生确认——**这是他的名字，一个字都要他点头**。
 4. **commit（存档点）**：`git add WALL.md && git commit -m "wall: 新同学 @{handle} 上墙"` → "存档打好了：谁、何时、改了哪一行、为什么，写进历史了。"
-5. **push + 开 PR（请过目）**：`git push -u origin wall/{学生handle}` → "push = 把你电脑上打好的存档**送回你 GitHub 名下的那份复印件**，这样全世界才看得到。" 然后 `gh pr create --repo HA7CH/ha7ch-school --title "wall: 新同学 @{handle} 上墙" --body "共修 GitHub 实验课实操。来自 {学生一句话自介}。"` → "申请单递出去了——从你的复印件，提回学校正本。"
+5. **push + 开 PR（请过目）**：`git push -u origin wall/{学生handle}` → "push = 把你电脑上打好的存档**送回你 GitHub 名下的那份复印件**，这样全世界才看得到。" 然后开 PR，正文末尾必须带上 `Closes #Issue编号`，这样合并时入学打卡 Issue 才会自动关闭：
+   ```
+   gh pr create --repo HA7CH/ha7ch-school \
+     --title "wall: 新同学 @{handle} 上墙" \
+     --body "共修 GitHub 实验课实操。来自 {学生一句话自介}。
+
+   Closes #${ISSUE_NUMBER}"
+   ```
+   → "申请单递出去了——从你的复印件，提回学校正本。" **验收 PR 正文确实出现了可点击的 `Closes #N`；只写 `#N` 不会自动关闭 Issue。**
 6. **看 diff（验收界面）**：把 PR URL 给学生自己点开 → 点 **Files changed** → "绿色那一行就是你加的。以后你让任何 agent 改任何东西，验收看的就是这个界面。今天你在墙的这一侧（提交方），以后你多数时候在另一侧（把关方）。"
 
 ### 第 3 步 · 等 merge（真实世界有延迟，这也是课）
 - 如实告诉学生：**merge 要等 Lawted 本人 review**——可能几小时、可能一两天。真实协作就是这样，review 是道真实的关，不是仪式。**PR 开出来，这节课就已经成功**。
 - 再预告一件可能发生的事：如果有同学排在他前面先合并了，他的 PR 可能显示 conflict（两个人都改了文件末尾同一处）——**这不是他做错了**，维护者会处理，这本身就是真实协作的一课。
+- PR 合并后，正文里的 `Closes #N` 会让入学打卡 Issue 自动变成 completed；如果 PR 被维护者汇总代合并，则由维护者手动关闭对应 Issue。
 - 讲完最后一环：merge 之后，Vercel 会自动重新部署，**不用任何人"发版"**，几分钟内刷新 https://school.ha7ch.com/WALL.md 就能看到他的名字——这就是"merge 即上线"。让他把这个网址存下来，明后天自己来看。
 
 ## 降级路径（按序尝试，别假装）
