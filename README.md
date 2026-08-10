@@ -1,5 +1,7 @@
 # HA7CH AI Native School 🎓
 
+![HA7CH School](assets/brand/ha7ch-school-logo.png)
+
 > 把 HA7CH 变成一所学校。加载即入学——一个懂行的 Agent 导师，带着你学。
 
 这不是一堆文档让你自己啃，是一个 **Claude Code skill**：你的 Agent 加载它，就变成 HA7CH 这所 AI Native 学校的导师本人，坐在你旁边、按你的能力和节奏，一节一节把 HA7CH 的真东西讲进你脑子里。
