@@ -1,116 +1,435 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HA7CH AI Native School</title>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<meta name="description" content="加载即入学。一个懂行的 Agent 导师，带着你学 AI Native 与 FDE，共修 GitHub 与「与一号位沟通」。" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="description" content="加载即入学。把 HA7CH School 装进你的 Agent，跟着懂行的导师学习 AI Native 与 FDE。">
 <style>
-  :root{
-    --bg:#0b0b0c; --fg:#f4f4f5; --muted:#a1a1aa; --line:#26262a; --card:#151517; --accent:#e5484d;
+  :root {
+    --bg: #fdfdfc;
+    --fg: #111;
+    --body: #282828;
+    --muted: rgba(0, 0, 0, .42);
+    --rule: #ececeb;
+    --focus: rgba(0, 122, 255, .5);
+    --font: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   }
-  @media (prefers-color-scheme: light){
-    :root{ --bg:#fafafa; --fg:#18181b; --muted:#52525b; --line:#e4e4e7; --card:#ffffff; --accent:#e5484d; }
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:760px;margin:0 auto;padding:64px 24px 80px}
-  .brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
-  h1{font-size:40px;line-height:1.15;margin:0 0 14px;font-weight:750;letter-spacing:-.02em}
-  .tag{font-size:19px;color:var(--muted);margin:0 0 8px}
-  .lead{font-size:16px;color:var(--muted);margin:22px 0 40px;max-width:60ch}
-  .courses{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 40px}
-  @media (max-width:640px){.courses{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px}
-  .card h3{margin:0 0 6px;font-size:17px}
-  .card .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;font-weight:600}
-  .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14px}
-  .card li{margin:3px 0}
-  h2{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:40px 0 14px;font-weight:600}
-  .steps{counter-reset:s;list-style:none;padding:0;margin:0}
-  .steps li{position:relative;padding:0 0 14px 34px;color:var(--fg)}
-  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-1px;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:12px;color:var(--muted)}
-  code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 7px;font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
-  .links{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 0}
-  .btn{display:inline-block;text-decoration:none;font-size:14px;padding:9px 16px;border-radius:9px;border:1px solid var(--line);color:var(--fg)}
-  .btn.pri{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-  footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
-  a{color:inherit}
-  .note{font-size:13px;color:var(--muted);margin-top:10px}
 
-  .oneliner{display:flex;align-items:stretch;gap:0;border:1px solid var(--line);border-radius:11px;overflow:hidden;margin:0 0 12px;background:var(--card)}
-  .ol-tag{flex:0 0 auto;display:flex;align-items:center;padding:12px 14px;font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--accent);border-right:1px solid var(--line);white-space:nowrap}
-  .ol-tag.alt{color:var(--muted)}
-  .ol-code{flex:1;display:flex;align-items:center;padding:12px 14px;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:transparent;border:0;border-radius:0;color:var(--fg);overflow-x:auto;white-space:nowrap}
-  @media (max-width:560px){.oneliner{flex-direction:column}.ol-tag{border-right:0;border-bottom:1px solid var(--line)}.ol-code{white-space:normal;word-break:break-all}}
+  *, *::before, *::after { box-sizing: border-box; }
+  html { min-height: 100%; background: var(--bg); color: var(--fg); scroll-behavior: smooth; }
+  body {
+    min-height: 100%;
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 2;
+    height: 6rem;
+    pointer-events: none;
+    content: "";
+    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.78) 26%, rgba(255,255,255,0) 100%);
+  }
+  ::selection { background: #ededed; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; }
+
+  .page {
+    width: 100%;
+    max-width: 36.375rem;
+    padding: 4.75rem 1rem 3rem;
+    margin: 0 auto;
+  }
+
+  .topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .identity { display: flex; align-items: flex-end; gap: .6rem; }
+  .brand-logo {
+    display: block;
+    width: 9.5rem;
+    height: auto;
+    mix-blend-mode: multiply;
+  }
+  .byline, .nav-link {
+    color: var(--muted);
+    font-size: .75rem;
+    font-weight: 460;
+    line-height: 1.2;
+    letter-spacing: -.002em;
+    white-space: nowrap;
+  }
+  .byline a, .nav-link { transition: color .15s ease; }
+  .byline a:hover, .nav-link:hover { color: var(--fg); }
+
+  .hero { animation: enter .45s ease both; }
+  .eyebrow {
+    margin: 0 0 .8rem;
+    color: var(--muted);
+    font-size: .8125rem;
+    font-weight: 460;
+    letter-spacing: -.003em;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 570;
+    line-height: 1.2;
+    letter-spacing: -.045em;
+  }
+  .tagline {
+    max-width: 32rem;
+    margin: .7rem 0 0;
+    color: var(--body);
+    font-size: .9375rem;
+    font-weight: 440;
+    line-height: 1.7;
+    letter-spacing: -.008em;
+    text-wrap: pretty;
+  }
+
+  .enroll {
+    margin-top: 2.25rem;
+    padding: 1rem 0 1.1rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .enroll-label {
+    display: block;
+    margin-bottom: .7rem;
+    color: var(--muted);
+    font-size: .8125rem;
+    font-weight: 460;
+  }
+  .command-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem;
+  }
+  .command-row code {
+    min-width: 0;
+    color: var(--fg);
+    font: .8125rem/1.65 var(--mono);
+    overflow-wrap: anywhere;
+  }
+  .copy-button {
+    flex: 0 0 auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: .8125rem;
+    line-height: 1.65;
+    transition: color .15s ease;
+  }
+  .copy-button:hover { color: var(--fg); }
+  .copy-button:focus-visible, a:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+  }
+  .enroll-note {
+    margin: .65rem 0 0;
+    color: var(--muted);
+    font-size: .75rem;
+    line-height: 1.5;
+  }
+
+  .section {
+    padding-top: 3rem;
+    animation: enter .45s .08s ease both;
+  }
+  .section-title {
+    margin: 0;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: .875rem;
+    font-weight: 460;
+    line-height: 1.25rem;
+    letter-spacing: -.005em;
+  }
+  .section-copy {
+    margin: 1rem 0 0;
+    color: var(--body);
+    font-size: .875rem;
+    font-weight: 440;
+    line-height: 1.7;
+    letter-spacing: -.004em;
+    text-wrap: pretty;
+  }
+
+  .rows { list-style: none; padding: .5rem 0 0; margin: 0; }
+  .row {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 3.25rem;
+    padding: .85rem 0 .85rem 6.75rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .row:last-child { border-bottom: 0; }
+  .row-label {
+    position: absolute;
+    left: 0;
+    max-width: 5.75rem;
+    color: var(--muted);
+    font-size: .8125rem;
+    font-weight: 460;
+    line-height: 1.25rem;
+  }
+  .row-copy { min-width: 0; flex: 1; }
+  .row-title {
+    display: block;
+    color: var(--fg);
+    font-size: .875rem;
+    font-weight: 540;
+    line-height: 1.25rem;
+    letter-spacing: -.008em;
+  }
+  .row-description {
+    display: block;
+    max-width: 21rem;
+    margin-top: .22rem;
+    color: var(--muted);
+    font-size: .8125rem;
+    font-weight: 440;
+    line-height: 1.35rem;
+  }
+  .row-meta {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: .8125rem;
+    font-weight: 460;
+    line-height: 1.25rem;
+    white-space: nowrap;
+  }
+
+  .steps { list-style: none; padding: .5rem 0 0; margin: 0; counter-reset: step; }
+  .step {
+    position: relative;
+    padding: .82rem 0 .82rem 2.1rem;
+    border-bottom: 1px solid var(--rule);
+    color: var(--body);
+    font-size: .875rem;
+    font-weight: 440;
+    line-height: 1.45rem;
+  }
+  .step:last-child { border-bottom: 0; }
+  .step::before {
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    counter-increment: step;
+    content: "0" counter(step);
+  }
+  .step strong { color: var(--fg); font-weight: 540; }
+
+  .link-row { color: inherit; transition: opacity .14s ease; }
+  .link-row .row-title { display: inline-flex; align-items: center; transition: transform .14s ease; }
+  .link-row .row-title::after {
+    width: .375rem;
+    height: .375rem;
+    margin-left: .5rem;
+    content: "";
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    opacity: .42;
+    transform: rotate(45deg);
+    transition: transform .14s ease;
+  }
+  .link-row:hover .row-title { transform: translateX(.0625rem); }
+  .link-row:hover .row-title::after { transform: translateX(.2rem) rotate(45deg); }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: .75rem;
+    line-height: 1.5;
+  }
+
+  @keyframes enter {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (hover: hover) and (min-width: 521px) {
+    .rows:has(.link-row:hover) .link-row { opacity: .35; }
+    .rows:has(.link-row:hover) .link-row:hover { opacity: 1; }
+  }
+  @media (max-width: 768px) {
+    body::before { display: none; }
+    .page { padding: 2rem 1.5rem 2.5rem; }
+    .topbar { margin-bottom: 3rem; }
+  }
+  @media (max-width: 520px) {
+    .brand-logo { width: 8.4rem; }
+    .byline { display: none; }
+    h1 { font-size: 1.8rem; }
+    .row { gap: .75rem; padding-left: 4.7rem; }
+    .row-label { max-width: 4rem; }
+    .row-meta { font-size: .75rem; }
+    .command-row { gap: .75rem; }
+    footer { flex-direction: column; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <p class="brand">HA7CH · AI Native School</p>
-  <h1>加载即入学。</h1>
-  <p class="tag">一个懂行的 Agent 导师，坐你旁边，带着你学。</p>
-  <p class="lead">
-    这不是一堆文档让你自己啃。它是一个 Claude Code skill——你的 Agent 加载它，就变成 HA7CH 这所 AI Native 学校的导师本人：
-    一次一小块地讲，随时能被你打断提问，按你的能力和进度动态排课，跨会话记得你学到哪。
-  </p>
-
-  <div class="courses">
-    <div class="card">
-      <p class="k">Course 01</p>
-      <h3>AI Native</h3>
-      <p style="margin:0;color:var(--muted);font-size:14px">搞懂这个时代到底怎么工作。</p>
-      <ul>
-        <li>零 Token 设计</li>
-        <li>ChatGPT Work 之后，活儿怎么变</li>
-        <li>实操：亲手做一个 AI native 产品</li>
-        <li>HA7CH 精选延伸</li>
-      </ul>
+<main class="page">
+  <header class="topbar">
+    <div class="identity">
+      <img class="brand-logo" src="/assets/brand/ha7ch-school-logo.png" width="1600" height="600" alt="HA7CH School">
+      <span class="byline">by <a href="https://ha7ch.com">HA7CH</a></span>
     </div>
-    <div class="card">
-      <p class="k">Course 02</p>
-      <h3>FDE</h3>
-      <p style="margin:0;color:var(--muted);font-size:14px">Forward Deployed Engineer 是什么、你适不适合。</p>
-      <ul>
-        <li>FDE 到底是什么（Echo + Delta）</li>
-        <li>FDE 九宫格：三种能力 × 三层客户</li>
-        <li>实操：被诚实诊断一次 &amp; 货代擂台</li>
-        <li>一线四城调查</li>
-      </ul>
+    <a class="nav-link" href="https://github.com/HA7CH/ha7ch-school">GitHub ↗</a>
+  </header>
+
+  <section class="hero" aria-labelledby="school-title">
+    <p class="eyebrow">AI Native · FDE · 2026</p>
+    <h1 id="school-title">加载即入学。</h1>
+    <p class="tagline">把这所学校装进你的 Agent。它会坐在你旁边，按你的能力和进度，一节一节带你学 AI Native 与 FDE，并记得你学到哪里。</p>
+
+    <div class="enroll">
+      <span class="enroll-label">把这句话发给 Claude Code 或 Codex</span>
+      <div class="command-row">
+        <code id="install-command">读 https://school.ha7ch.com/install.md ，帮我把 HA7CH School 装上</code>
+        <button class="copy-button" type="button" data-copy-target="install-command" aria-live="polite">复制</button>
+      </div>
+      <p class="enroll-note">课程永远读取最新版本；学习进度只存在你自己的机器上。</p>
     </div>
-  </div>
+  </section>
 
-  <p class="note" style="margin:-26px 0 10px">两门课共修 · <strong>GitHub</strong>：不会 GitHub 也能上——你的第一个 issue 和第一个 PR，就提在<a href="https://github.com/HA7CH/ha7ch-school">这所学校自己的仓库</a>里；合并那一刻，<a href="/WALL.md">校友墙</a>自动上线你的名字。</p>
+  <section class="section" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title">这是什么</h2>
+    <p class="section-copy">这不是一堆文档，也不是一个需要你自己刷完的视频网站。HA7CH School 是一个 Skill：Agent 加载以后，会理解课程、诊断你的起点、接受你随时打断，并把教学放进真实任务里。</p>
+  </section>
 
-  <p class="note" style="margin:0 0 40px">两门课共修 · <strong>与一号位沟通</strong>：准备进企业、见老板的学生加修——会前把技术翻译成具体的产品机会、30 秒讲清价值，会中处理技术边界、竞品与专业 pushback，会后把「有意思」推成有数据、有指标、有负责人、有停止条件的 POC。不是销售话术，说清做不了也是专业结果。</p>
+  <section class="section" aria-labelledby="courses-title">
+    <h2 class="section-title" id="courses-title">课程</h2>
+    <ul class="rows">
+      <li class="row">
+        <span class="row-label">Course 01</span>
+        <span class="row-copy">
+          <span class="row-title">AI Native</span>
+          <span class="row-description">零 Token 设计、ChatGPT Work 之后的工作方式，以及亲手做一个 AI-native 产品。</span>
+        </span>
+        <span class="row-meta">4 节</span>
+      </li>
+      <li class="row">
+        <span class="row-label">Course 02</span>
+        <span class="row-copy">
+          <span class="row-title">FDE</span>
+          <span class="row-description">FDE 到底是什么、九宫格能力模型、真实企业 Lab，以及一线四城调查。</span>
+        </span>
+        <span class="row-meta">4 节</span>
+      </li>
+      <li class="row">
+        <span class="row-label">共修</span>
+        <span class="row-copy">
+          <span class="row-title">GitHub</span>
+          <span class="row-description">不会也能入学。你的第一个 Issue 和 PR，就提在这所学校自己的仓库里。</span>
+        </span>
+        <span class="row-meta">必修</span>
+      </li>
+      <li class="row">
+        <span class="row-label">加修</span>
+        <span class="row-copy">
+          <span class="row-title">与一号位沟通</span>
+          <span class="row-description">把技术翻译成产品机会，把“有意思”推进成有指标、有负责人、有停止条件的 POC。</span>
+        </span>
+        <span class="row-meta">选修</span>
+      </li>
+    </ul>
+  </section>
 
-  <h2>怎么装 · 一句话搞定</h2>
-  <p class="lead" style="margin:0 0 18px">把下面这句复制粘贴给你的 agent（Claude Code / Codex 都行）——它会读安装页、认出自己的环境、把学校装好并开课。</p>
+  <section class="section" aria-labelledby="how-title">
+    <h2 class="section-title" id="how-title">怎么上课</h2>
+    <ol class="steps">
+      <li class="step"><strong>把安装句发给 Agent。</strong> 它会识别自己的环境并加载学校。</li>
+      <li class="step"><strong>选一门课。</strong> Agent 会先判断你的起点，再决定从哪里开始。</li>
+      <li class="step"><strong>一节一节学。</strong> 随时打断、追问、反驳；每节课都落到一个真实动作。</li>
+      <li class="step"><strong>把结果交回来。</strong> 第一个 Issue、PR 或企业方案，会成为你的作业和下一课的上下文。</li>
+    </ol>
+  </section>
 
-  <div class="oneliner">
-    <div class="ol-tag">一句话装上</div>
-    <code class="ol-code">读 https://school.ha7ch.com/install.md ，帮我把 HA7CH School 装上</code>
-  </div>
-  <div class="oneliner">
-    <div class="ol-tag alt">免安装 · 随时试</div>
-    <code class="ol-code">读 https://school.ha7ch.com/school.md ，带我上课</code>
-  </div>
-  <div class="oneliner">
-    <div class="ol-tag alt">会用终端 · npx 直装</div>
-    <code class="ol-code">npx @ha7ch/school</code>
-  </div>
-  <p class="note">课程内容托管在本站、永远最新；一句话让你的 agent 自己把学校接上。学习进度存在你自己机器上。</p>
-
-  <div class="links">
-    <a class="btn pri" href="/school.md">查看课程入口（school.md）</a>
-    <a class="btn" href="https://ha7ch.com">HA7CH</a>
-  </div>
+  <section class="section" aria-labelledby="entrances-title">
+    <h2 class="section-title" id="entrances-title">其他入口</h2>
+    <div class="rows">
+      <a class="row link-row" href="/school.md">
+        <span class="row-label">免安装</span>
+        <span class="row-copy">
+          <span class="row-title">直接让 Agent 读课程入口</span>
+          <span class="row-description">读 school.md，马上开始第一节课。</span>
+        </span>
+      </a>
+      <a class="row link-row" href="https://www.npmjs.com/package/@ha7ch/school">
+        <span class="row-label">Terminal</span>
+        <span class="row-copy">
+          <span class="row-title">npx @ha7ch/school</span>
+          <span class="row-description">适合已经习惯在终端里安装 Skill 的人。</span>
+        </span>
+      </a>
+      <a class="row link-row" href="https://github.com/HA7CH/ha7ch-school">
+        <span class="row-label">GitHub</span>
+        <span class="row-copy">
+          <span class="row-title">进入学校仓库</span>
+          <span class="row-description">看课程、提 Issue、交 PR，也可以直接改进这所学校。</span>
+        </span>
+      </a>
+      <a class="row link-row" href="/WALL.md">
+        <span class="row-label">Wall</span>
+        <span class="row-copy">
+          <span class="row-title">校友墙</span>
+          <span class="row-description">第一个 PR 合并时，你的名字会自动上墙。</span>
+        </span>
+      </a>
+    </div>
+  </section>
 
   <footer>
-    Made by HA7CH · 让每个人都能跟着懂行的人，学会在 AI 时代真正地工作。
+    <span>Made by HA7CH</span>
+    <span>Build in the field. Hatch into impact.</span>
   </footer>
-</div>
+</main>
+
+<script>
+  const copyButton = document.querySelector("[data-copy-target]");
+  copyButton?.addEventListener("click", async () => {
+    const target = document.getElementById(copyButton.dataset.copyTarget);
+    if (!target) return;
+    try {
+      await navigator.clipboard.writeText(target.textContent.trim());
+      copyButton.textContent = "已复制";
+      window.setTimeout(() => { copyButton.textContent = "复制"; }, 1600);
+    } catch {
+      copyButton.textContent = "请手动复制";
+    }
+  });
+</script>
 </body>
 </html>
