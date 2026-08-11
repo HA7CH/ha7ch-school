@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HA7CH AI Native School</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta name="description" content="加载即入学。把 HA7CH School 装进你的 Agent，跟着懂行的导师学习 AI Native 与 FDE。">
+<meta name="description" content="加载即入学。把 HA7CH School 装进你的 Agent，跟着学 AI Native 与 FDE。">
 <style>
   :root {
     --bg: #fdfdfc;
@@ -76,13 +76,6 @@
   .byline a:hover, .nav-link:hover { color: var(--fg); }
 
   .hero { animation: enter .45s ease both; }
-  .eyebrow {
-    margin: 0 0 .8rem;
-    color: var(--muted);
-    font-size: .8125rem;
-    font-weight: 460;
-    letter-spacing: -.003em;
-  }
   h1 {
     margin: 0;
     font-size: 2rem;
@@ -164,15 +157,6 @@
     line-height: 1.25rem;
     letter-spacing: -.005em;
   }
-  .section-copy {
-    margin: 1rem 0 0;
-    color: var(--body);
-    font-size: .875rem;
-    font-weight: 440;
-    line-height: 1.7;
-    letter-spacing: -.004em;
-    text-wrap: pretty;
-  }
 
   .rows { list-style: none; padding: .5rem 0 0; margin: 0; }
   .row {
@@ -221,26 +205,6 @@
     line-height: 1.25rem;
     white-space: nowrap;
   }
-
-  .steps { list-style: none; padding: .5rem 0 0; margin: 0; counter-reset: step; }
-  .step {
-    position: relative;
-    padding: .82rem 0 .82rem 2.1rem;
-    border-bottom: 1px solid var(--rule);
-    color: var(--body);
-    font-size: .875rem;
-    font-weight: 440;
-    line-height: 1.45rem;
-  }
-  .step:last-child { border-bottom: 0; }
-  .step::before {
-    position: absolute;
-    left: 0;
-    color: var(--muted);
-    counter-increment: step;
-    content: "0" counter(step);
-  }
-  .step strong { color: var(--fg); font-weight: 540; }
 
   .link-row { color: inherit; transition: opacity .14s ease; }
   .link-row .row-title { display: inline-flex; align-items: center; transition: transform .14s ease; }
@@ -310,23 +274,17 @@
   </header>
 
   <section class="hero" aria-labelledby="school-title">
-    <p class="eyebrow">AI Native · FDE · 2026</p>
     <h1 id="school-title">加载即入学。</h1>
-    <p class="tagline">把这所学校装进你的 Agent。它会坐在你旁边，按你的能力和进度，一节一节带你学 AI Native 与 FDE，并记得你学到哪里。</p>
+    <p class="tagline">把 HA7CH School 装进你的 Agent，跟着学 AI Native 与 FDE。</p>
 
     <div class="enroll">
-      <span class="enroll-label">把这句话发给 Claude Code 或 Codex</span>
+      <span class="enroll-label">发给 Claude Code 或 Codex</span>
       <div class="command-row">
         <code id="install-command">读 https://school.ha7ch.com/install.md ，帮我把 HA7CH School 装上</code>
         <button class="copy-button" type="button" data-copy-target="install-command" aria-live="polite">复制</button>
       </div>
-      <p class="enroll-note">课程永远读取最新版本；学习进度只存在你自己的机器上。</p>
+      <p class="enroll-note">学习进度保存在本机。</p>
     </div>
-  </section>
-
-  <section class="section" aria-labelledby="about-title">
-    <h2 class="section-title" id="about-title">这是什么</h2>
-    <p class="section-copy">这不是一堆文档，也不是一个需要你自己刷完的视频网站。HA7CH School 是一个 Skill：Agent 加载以后，会理解课程、诊断你的起点、接受你随时打断，并把教学放进真实任务里。</p>
   </section>
 
   <section class="section" aria-labelledby="courses-title">
@@ -336,7 +294,7 @@
         <span class="row-label">Course 01</span>
         <span class="row-copy">
           <span class="row-title">AI Native</span>
-          <span class="row-description">零 Token 设计、ChatGPT Work 之后的工作方式，以及亲手做一个 AI-native 产品。</span>
+          <span class="row-description">理解 AI 时代怎么工作，并做出一个 AI Native 产品。</span>
         </span>
         <span class="row-meta">4 节</span>
       </li>
@@ -344,7 +302,7 @@
         <span class="row-label">Course 02</span>
         <span class="row-copy">
           <span class="row-title">FDE</span>
-          <span class="row-description">FDE 到底是什么、九宫格能力模型、真实企业 Lab，以及一线四城调查。</span>
+          <span class="row-description">理解 FDE、判断是否适合，并进入真实企业场景。</span>
         </span>
         <span class="row-meta">4 节</span>
       </li>
@@ -352,7 +310,7 @@
         <span class="row-label">共修</span>
         <span class="row-copy">
           <span class="row-title">GitHub</span>
-          <span class="row-description">不会也能入学。你的第一个 Issue 和 PR，就提在这所学校自己的仓库里。</span>
+          <span class="row-description">完成你的第一个 Issue 和 PR。</span>
         </span>
         <span class="row-meta">必修</span>
       </li>
@@ -360,21 +318,11 @@
         <span class="row-label">加修</span>
         <span class="row-copy">
           <span class="row-title">与一号位沟通</span>
-          <span class="row-description">把技术翻译成产品机会，把“有意思”推进成有指标、有负责人、有停止条件的 POC。</span>
+          <span class="row-description">把技术价值推进成可执行的 POC。</span>
         </span>
         <span class="row-meta">选修</span>
       </li>
     </ul>
-  </section>
-
-  <section class="section" aria-labelledby="how-title">
-    <h2 class="section-title" id="how-title">怎么上课</h2>
-    <ol class="steps">
-      <li class="step"><strong>把安装句发给 Agent。</strong> 它会识别自己的环境并加载学校。</li>
-      <li class="step"><strong>选一门课。</strong> Agent 会先判断你的起点，再决定从哪里开始。</li>
-      <li class="step"><strong>一节一节学。</strong> 随时打断、追问、反驳；每节课都落到一个真实动作。</li>
-      <li class="step"><strong>把结果交回来。</strong> 第一个 Issue、PR 或企业方案，会成为你的作业和下一课的上下文。</li>
-    </ol>
   </section>
 
   <section class="section" aria-labelledby="entrances-title">
@@ -383,29 +331,22 @@
       <a class="row link-row" href="/school.md">
         <span class="row-label">免安装</span>
         <span class="row-copy">
-          <span class="row-title">直接让 Agent 读课程入口</span>
-          <span class="row-description">读 school.md，马上开始第一节课。</span>
+          <span class="row-title">直接开课</span>
+          <span class="row-description">读 school.md，直接开始。</span>
         </span>
       </a>
       <a class="row link-row" href="https://www.npmjs.com/package/@ha7ch/school">
         <span class="row-label">Terminal</span>
         <span class="row-copy">
           <span class="row-title">npx @ha7ch/school</span>
-          <span class="row-description">适合已经习惯在终端里安装 Skill 的人。</span>
-        </span>
-      </a>
-      <a class="row link-row" href="https://github.com/HA7CH/ha7ch-school">
-        <span class="row-label">GitHub</span>
-        <span class="row-copy">
-          <span class="row-title">进入学校仓库</span>
-          <span class="row-description">看课程、提 Issue、交 PR，也可以直接改进这所学校。</span>
+          <span class="row-description">在终端安装 School。</span>
         </span>
       </a>
       <a class="row link-row" href="/WALL.md">
         <span class="row-label">Wall</span>
         <span class="row-copy">
           <span class="row-title">校友墙</span>
-          <span class="row-description">第一个 PR 合并时，你的名字会自动上墙。</span>
+          <span class="row-description">看看已经完成第一个 PR 的同学。</span>
         </span>
       </a>
     </div>
@@ -413,7 +354,6 @@
 
   <footer>
     <span>Made by HA7CH</span>
-    <span>Build in the field. Hatch into impact.</span>
   </footer>
 </main>
 
