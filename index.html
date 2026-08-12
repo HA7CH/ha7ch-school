@@ -3,19 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fdfdfc">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010">
 <title>HA7CH AI Native School</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="description" content="加载即入学。把 HA7CH School 装进你的 Agent，跟着学 AI Native 与 FDE。">
 <style>
   :root {
+    color-scheme: light dark;
     --bg: #fdfdfc;
     --fg: #111;
     --body: #282828;
     --muted: rgba(0, 0, 0, .42);
     --rule: #ececeb;
     --focus: rgba(0, 122, 255, .5);
+    --selection: #ededed;
+    --fade-rgb: 255, 255, 255;
+    --logo-filter: brightness(0);
     --font: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101010;
+      --fg: #f4f3f0;
+      --body: rgba(255, 255, 255, .68);
+      --muted: rgba(255, 255, 255, .46);
+      --rule: #232320;
+      --focus: rgba(76, 157, 255, .55);
+      --selection: #2e2e2a;
+      --fade-rgb: 16, 16, 16;
+      --logo-filter: brightness(0) invert(1);
+    }
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -37,9 +57,9 @@
     height: 6rem;
     pointer-events: none;
     content: "";
-    background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.78) 26%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, rgb(var(--fade-rgb)) 0%, rgba(var(--fade-rgb), .78) 26%, rgba(var(--fade-rgb), 0) 100%);
   }
-  ::selection { background: #ededed; }
+  ::selection { background: var(--selection); }
   a { color: inherit; text-decoration: none; }
   button { font: inherit; }
 
@@ -62,7 +82,7 @@
     display: block;
     width: 9.5rem;
     height: auto;
-    mix-blend-mode: multiply;
+    filter: var(--logo-filter);
   }
   .byline, .nav-link {
     color: var(--muted);
