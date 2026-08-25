@@ -22,6 +22,7 @@ const files = [
     additions: 1,
     deletions: 0,
     changes: 1,
+    patch: `@@ -3,1 +3,2 @@\n - 2026-08-01 · @HA7CH · 开墙\n+${validLine}`,
   },
 ];
 
@@ -29,7 +30,6 @@ test("accepts one authored line appended to WALL.md", () => {
   const result = validateWallChange({
     pr,
     files,
-    baseContent,
     headContent: `${baseContent}${validLine}\n`,
   });
   assert.equal(result.ok, true);
@@ -40,7 +40,6 @@ test("rejects changes outside WALL.md", () => {
   const result = validateWallChange({
     pr,
     files: [{ ...files[0], filename: "README.md" }],
-    baseContent,
     headContent: `${baseContent}${validLine}\n`,
   });
   assert.equal(result.ok, false);
@@ -51,7 +50,6 @@ test("rejects edits mixed with the appended line", () => {
   const result = validateWallChange({
     pr,
     files: [{ ...files[0], deletions: 1, changes: 2 }],
-    baseContent,
     headContent: `${baseContent}${validLine}\n`,
   });
   assert.equal(result.ok, false);
@@ -62,12 +60,30 @@ test("rejects a wall handle that differs from the PR author", () => {
   const otherLine = "- 2026-08-25 · @someone-else · 代别人上墙";
   const result = validateWallChange({
     pr,
-    files,
-    baseContent,
+    files: [{ ...files[0], patch: `@@ -3,1 +3,2 @@\n+${otherLine}` }],
     headContent: `${baseContent}${otherLine}\n`,
   });
   assert.equal(result.ok, false);
   assert.match(result.errors.join(" "), /必须与 PR 作者/);
+});
+
+test("accepts a stale branch when its patch is one valid EOF append", () => {
+  const result = validateWallChange({
+    pr,
+    files,
+    headContent: `${baseContent}${validLine}\n`,
+  });
+  assert.equal(result.ok, true);
+});
+
+test("rejects one added line when it was inserted before the file end", () => {
+  const result = validateWallChange({
+    pr,
+    files,
+    headContent: `# Wall\n\n${validLine}\n- 2026-08-01 · @HA7CH · 开墙\n`,
+  });
+  assert.equal(result.ok, false);
+  assert.match(result.errors.join(" "), /文件末尾/);
 });
 
 test("extracts and deduplicates explicit closing references", () => {

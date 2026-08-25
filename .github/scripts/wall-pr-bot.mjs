@@ -189,15 +189,13 @@ async function main() {
     return;
   }
 
-  const [files, base, head] = await Promise.all([
+  const [files, head] = await Promise.all([
     getPullFiles(),
-    getFile(repository, "WALL.md", pr.base.sha),
     getFile(pr.head.repo.full_name, "WALL.md", pr.head.sha),
   ]);
   const policy = validateWallChange({
     pr,
     files,
-    baseContent: base.content,
     headContent: head.content,
   });
 
