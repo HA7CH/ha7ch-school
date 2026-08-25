@@ -32,8 +32,9 @@ export function appendEntry(content, line) {
   return { content: `${content}${line}\n`, added: true };
 }
 
-export function validateWallChange({ pr, files, baseContent, headContent }) {
+export function validateWallChange({ pr, files, headContent }) {
   const errors = [];
+  const wallFile = Array.isArray(files) && files.length === 1 ? files[0] : null;
 
   if (!pr || pr.state !== "open") errors.push("PR 不是 open 状态");
   if (pr?.draft) errors.push("Draft PR 不自动处理");
@@ -42,7 +43,7 @@ export function validateWallChange({ pr, files, baseContent, headContent }) {
   if (!Array.isArray(files) || files.length !== 1) {
     errors.push("必须且只能修改一个文件");
   } else {
-    const [file] = files;
+    const file = wallFile;
     if (file.filename !== WALL_PATH) errors.push(`只能修改 ${WALL_PATH}`);
     if (file.status !== "modified") errors.push(`${WALL_PATH} 必须是追加修改`);
     if (file.additions !== 1 || file.deletions !== 0 || file.changes !== 1) {
@@ -50,25 +51,31 @@ export function validateWallChange({ pr, files, baseContent, headContent }) {
     }
   }
 
-  if (typeof baseContent !== "string" || typeof headContent !== "string") {
-    errors.push("无法读取 PR 两端的 WALL.md");
+  if (typeof headContent !== "string") {
+    errors.push("无法读取 PR 提交版本的 WALL.md");
+    return { ok: false, errors };
+  }
+  if (!headContent.endsWith("\n")) {
+    errors.push("PR 提交版本的 WALL.md 末尾缺少换行");
     return { ok: false, errors };
   }
 
-  if (!baseContent.endsWith("\n")) errors.push("基线 WALL.md 末尾缺少换行");
-  if (!headContent.startsWith(baseContent)) {
-    errors.push("PR 改写了 WALL.md 的既有内容，不是纯末尾追加");
+  const patchAddedLines = String(wallFile?.patch || "")
+    .split("\n")
+    .filter((line) => line.startsWith("+") && !line.startsWith("+++"))
+    .map((line) => line.slice(1));
+  if (patchAddedLines.length !== 1) {
+    errors.push("GitHub patch 必须能确认恰好新增一行");
     return { ok: false, errors };
   }
 
-  const suffix = headContent.slice(baseContent.length);
-  const suffixLines = suffix.split("\n");
-  if (suffixLines.length !== 2 || suffixLines[1] !== "" || !suffixLines[0]) {
-    errors.push("必须在 WALL.md 末尾恰好追加一行，并保留文件末尾换行");
-    return { ok: false, errors };
+  const headLines = headContent.slice(0, -1).split("\n");
+  const line = headLines.at(-1);
+  if (!line || patchAddedLines[0] !== line) {
+    errors.push("新增行必须位于 PR 提交版本的 WALL.md 文件末尾");
+    return { ok: false, errors, line: patchAddedLines[0] };
   }
 
-  const line = suffixLines[0];
   const match = line.match(
     /^- (\d{4}-\d{2}-\d{2}) · @([A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?) · (\S.*)$/,
   );
