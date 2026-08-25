@@ -1,0 +1,51 @@
+name: 校友墙自动验收
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
+    paths:
+      - "WALL.md"
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "需要重新处理的校友墙 PR 编号"
+        required: true
+        type: number
+
+# pull_request_target 会拿到主仓库写权限，因此这里刻意只 checkout 默认分支，
+# 绝不 checkout、执行或 source 外部 PR 的代码。PR 内容只通过 GitHub API 当数据读取。
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: ha7ch-school-wall-admission
+  cancel-in-progress: false
+
+jobs:
+  admit:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout trusted default-branch code only
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Test the admission policy
+        run: node --test .github/scripts/wall-pr-policy.test.mjs
+
+      - name: Validate and admit the wall PR
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+        run: node .github/scripts/wall-pr-bot.mjs
