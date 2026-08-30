@@ -31,3 +31,4 @@
 - 2026-08-25 · @chenyexing1-create · 其实我不想上班也不想上进只是需要每个月有钱打到我卡上
 - 2026-08-26 · @alwayszhou2861 · 北京，AI行业，学习IOA时代的世界变化与组织变革
 - 2026-08-27 · @3270467459jh-arch · 学习 GitHub 和 AI Native，用 Learn in Public 搭建一个长期账号。
+- 2026-08-30 · @RockdaC239 · 一名 AI PM + Builder，正在努力尝试玩明白人生这场游戏。
