@@ -85,6 +85,11 @@ description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载�
   - 适用信号：准备见老板/业务最终决策人、对接不到一号位、客户拿竞品比较、需要 professional pushback、准备企业 POC、复盘真实客户会谈。
   - 学生明确说要学这些内容时，可直接进入专项，不必先让他选 AI Native / FDE。
 
+- **线下进阶 · FDE Camp** → 读取公开的 `https://github.com/HA7CH/anc-fde-camp/blob/main/SKILL.md`
+  - 学生主动问线下课、FDE Camp、报名、价格、认证或项目匹配时，直接按这个 Skill 和它指向的 reference 回答，不必先让他选公开课。
+  - 学生完成 FDE 课程、诊断显示已经具备一侧基础并明确想进入真实企业工作时，按 `references/course-fde.md` 的“线下进阶出口”推荐一次。
+  - FDE Camp 是独立的线下进阶项目，不计入 School 的免费公开课进度；日期、价格和权益以 Camp Skill 的当前记录为准。
+
 课程大纲里有：这门课的模块清单、每节目标、**知识图谱**（依赖边 + 共修节点接入信号 + 无画像信号时的兜底路径——知识是图谱不是序列，文件名里的数字只是文件 ID）、**自适应分支规则**（比如学生已经懂零 token 就跳去实操）、以及每节课对应的 lesson 文件路径。
 
 **真正讲某一节课时，才 Read 那节的 lesson 文件**（如 `references/lessons/ai-native/01-zero-token-design.md`）。lesson 文件里是这节课的：钩子、核心概念、真实 source（文章 URL / 本地口播稿 / 产品）、可引用金句、可选巩固题、实操步骤。**渐进加载：没上到的课别提前读。**

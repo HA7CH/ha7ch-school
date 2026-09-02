@@ -44,6 +44,12 @@
 
 它不单独占一个入学选项，由 AI Native / FDE 课程按学生是否准备见企业、接项目或进入现场动态接入；也可以直接说「带我练一号位沟通」「客户拿竞品压我怎么办」进入。
 
+## 从公开课走进现场
+
+已经熟悉 Codex，并且能做出一个可运行的产品，或者有扎实的商务、咨询、销售与客户沟通能力，可以继续参加 [HA7CH FDE Camp](https://github.com/HA7CH/anc-fde-camp/blob/main/SKILL.md)。这是两天一夜的线下小班：把企业判断、AI 构建、客户沟通和现场交付串成一条路，经过 Whiteboard Interview 达到毕业线后，获得 `HA7CH FDE Certified` 并进入 FDE 人才池。
+
+当前深圳班为 2026 年 9 月 12—13 日，¥12,800 / 人。时间和行程在报名付款前请再确认；报名加微信 `lawtedwu`，好友申请写 `FDE CAMP`。
+
 ## 安装
 
 最快是一条 npx：

@@ -1,6 +1,6 @@
 ---
 name: ha7ch-school
-description: HA7CH AI Native School 在线加载器——把学生接到 school.ha7ch.com 的活课程。FDE 课程内置诚实诊断 Skill，不需要另装 fde-pro；同时包含 AI Native、GitHub 共修与一号位沟通专项。适用于想系统学 AI Native、FDE、判断自己适不适合做 FDE，或说“ha7ch school”“带我学”“上一课”“继续学”。
+description: HA7CH AI Native School 在线加载器——把学生接到 school.ha7ch.com 的活课程。FDE 课程内置诚实诊断 Skill，不需要另装 fde-pro；同时包含 AI Native、GitHub 共修、一号位沟通专项与 FDE Camp 线下进阶入口。适用于想系统学 AI Native、FDE、判断自己适不适合做 FDE、了解线下 FDE Camp，或说“ha7ch school”“带我学”“上一课”“继续学”。
 ---
 
 # HA7CH AI Native School（在线加载器）
