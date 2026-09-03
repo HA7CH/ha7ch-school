@@ -33,3 +33,4 @@
 - 2026-08-27 · @3270467459jh-arch · 学习 GitHub 和 AI Native，用 Learn in Public 搭建一个长期账号。
 - 2026-08-30 · @RockdaC239 · 一名 AI PM + Builder，正在努力尝试玩明白人生这场游戏。
 - 2026-08-31 · @wanghaonan3333-web · 从真实业务出发，用 Agent 做出能交付、能验收、能复用的 AI Native 产品。
+- 2026-09-02 · @austingongh86 · 业务背景，正在用真实交付补齐 Delta，成为能端到端解决问题的 FDE。
