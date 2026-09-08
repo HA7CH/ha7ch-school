@@ -11,7 +11,7 @@
 
 ## 导师怎么带（用 Skill 工具把 cv-pro 拉起来）
 **触发方式**：在对话里调用 `Skill(skill="cv-pro")`，或对学生说"我现在帮你把简历发布上去"再据 cv-pro 的 SKILL.md 驱动真实 `npx @ha7ch/cv-pro@latest ...` 命令。学生不用手敲 npx，只用自然语言指挥你。
-> ⚠️ 环境注意：cv-pro 认账要连 cv.ha7ch.com，某些托管沙箱会 403 `host_not_allowed`。这节课在**本机 Claude Code CLI** 跑最稳。
+> cv-pro 需连 cv.ha7ch.com，某些托管沙箱会报 403 `host_not_allowed`，在本机 Claude Code CLI 跑最稳。
 
 ## 学生上手步骤（你带着走，一步一确认）
 1. **网页认领 handle 拿 token**：让学生浏览器打开 https://cv.ha7ch.com ，在 Step 1「Create your online CV」的 `cv.ha7ch.com/` 处选一个自己的 username（就是 `{handle}`），点「Get token →」；Step 2 会显示他的真实 token（`cv_pat_` 开头），复制保存。**跟学生点破：这个 token 是"认账凭证"，不是 AI 额度**——正好印证零 token。
