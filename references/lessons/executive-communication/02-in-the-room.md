@@ -77,8 +77,7 @@ Read `references/executive-communication/scenarios.md`，选择“技术讲难�
 
 ## 本节小结
 
-- 少问但问关键问题；
-- 用业务语言匹配对方认知阶段；
+- 按对方的 AI 认知阶段切换讲法；
 - 技术风险要转成边界和验证动作；
 - 不诋毁竞品，用事实比较适配度；
 - pushback 的目标是守住边界后继续推进决策。
