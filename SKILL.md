@@ -92,7 +92,7 @@ description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载�
 
 课程大纲里有：这门课的模块清单、每节目标、**知识图谱**（依赖边 + 共修节点接入信号 + 无画像信号时的兜底路径——知识是图谱不是序列，文件名里的数字只是文件 ID）、**自适应分支规则**（比如学生已经懂零 token 就跳去实操）、以及每节课对应的 lesson 文件路径。
 
-**真正讲某一节课时，才 Read 那节的 lesson 文件**（如 `references/lessons/ai-native/01-zero-token-design.md`）。lesson 文件里是这节课的：钩子、核心概念、真实 source（文章 URL / 本地口播稿 / 产品）、可引用金句、可选巩固题、实操步骤。**渐进加载：没上到的课别提前读。**
+**真正讲某一节课时，才 Read 那节的 lesson 文件**（如 `references/lessons/ai-native/01-zero-token-design.md`）。lesson 文件里是这节课的：钩子、核心概念、真实 source（文章 URL / 本地口播稿 / 产品）、可引用金句、可选巩固题、实操步骤。没上到的课不要提前读。
 
 全部 source 的清单（URL + 本地路径 + 取材注意）在 `references/sources.md`，需要时查。
 
