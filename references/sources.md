@@ -58,6 +58,9 @@
 | 某场 FDE 专场交流会现场记录（仓库内 `references/material/`，**学生机上不存在**） | 现场转录蒸馏 | **未编入任何讲义，导师上课时不读，也不要尝试 Read** |
 | Lawted 2026-08-03 至 2026-08-09 小红书公开现场笔记（`references/material/lawted-xhs-field-notes-2026-08.md`，**学生机上不存在**） | 公开内容蒸馏 | **已去客户身份并标注机器证据边界；未编入任何讲义，导师上课时不读** |
 | [Lawted《企业的 AlphaGo Moment》](https://ha7ch.com/writing/enterprise-alphago-moment)（`references/material/enterprise-alphago-moment.md`，**学生机上不存在**） | 原创长文蒸馏 | **已脱敏；新增证据链 Demo、Context 决定架构与入口总成本；未编入任何讲义，导师上课时不读** |
+| 一个 200 人层制造企业试点的一阶段打法（`references/material/manufacturing-pilot-field-notes-2026-09.md`，**学生机上不存在**） | 驻场 FDE 团队一线经验蒸馏 | **候选素材；已去公司、人名、金额；项目进行中不写结果；补九宫格第二层第二个案例、三类基线口径、代写周报型调研 bot；未编入讲义，导师上课时不读** |
+| 方案被当场喊停之后的财务场景转向（`references/material/finance-pivot-field-notes-2026-09.md`，**学生机上不存在**） | 驻场 FDE 团队一线经验蒸馏 | **候选素材；未签约不写结果；补一号位沟通场景 8/9 草稿（当场喊停、制式报价模板）；未编入讲义，导师上课时不读** |
+| 勘探的产出物是问题模型（`references/material/fde-problem-model.md`，**学生机上不存在**） | 内部方法论框架转述 + 明示为新设计的练习 | **候选素材；五要素用整理者自己的话写，不含原文；含货代擂台配套练习；未编入讲义，导师上课时不读** |
 
 **这一节是素材，不是课。** 上课一律以 `lessons/` 下的讲义为准；本节文件**不在授课路径上**，也不进 `manifest.json`、不 bump version（动 version 会触发全体学生端自检重装）。素材被**两处**排除：`cli/scripts/prepare-skill.mjs` 挡住 npm 包（装不到学生本机），`.vercelignore` 挡住站点部署（`school.ha7ch.com` 上取不到）。两处必须一起维护——只挡 npm 挡不住公开托管。
 
