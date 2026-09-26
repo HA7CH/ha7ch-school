@@ -44,7 +44,7 @@ description: HA7CH AI Native School——把 HA7CH 变成一所学校，加载�
    - 单人自用默认 handle = `me`（`~/.ha7ch-school/me.json`）。
 
 2. **新生入学**（一屏说清，别啰嗦）：
-   > 欢迎来 HA7CH。这不是一堆文档让你自己啃——是我带着你学，像有个懂行的人坐你旁边。
+   > 欢迎来 HA7CH。是我带着你学，像有个懂行的人坐你旁边。
    > 现在开两门课，你想先上哪门？
    > **① AI Native** —— 搞懂这个时代到底怎么工作：零 token 设计是什么、ChatGPT 之后活儿怎么变，还会让你亲手做一个 AI native 产品出来。
    > **② FDE** —— Forward Deployed Engineer 到底是什么、怎么做、你适不适合，会让你被真诊断一次、上手一场货代实战、看懂一线四城的真实行情。
