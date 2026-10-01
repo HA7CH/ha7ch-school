@@ -1,7 +1,7 @@
 # 共修节点 · GitHub 实验课：第一个 issue 和第一个 PR，就提在这所学校
 
 > 实操对象：https://github.com/HA7CH/ha7ch-school （公开仓库，**你正在上的这所学校本身**）＋ 校友墙 `WALL.md`（合并后见 https://school.ha7ch.com/WALL.md ）｜ 类型：实验课(共修节点) ｜ 依赖：六个词的理解——通常来自概念课 `shared/github-concepts`；真懂 Git 的现场 30 秒补齐即可（见「导师怎么带」）
-> 这不是模拟、不是沙盒。学生今天真实地：开出人生第一个 issue（入学打卡）→ 提出人生第一个 PR（把自己的名字写上校友墙）→ 被 Lawted 真实 review、合并后名字自动上线 school.ha7ch.com/WALL.md。六个词里前五个（repo/commit/branch+PR/issue/fork）当堂在真仓库上走完；第六个 merge 是道真实的异步关——**开出 PR 即成功**。
+> 这节课全程真实操作：学生今天真实地：开出人生第一个 issue（入学打卡）→ 提出人生第一个 PR（把自己的名字写上校友墙）→ 被 Lawted 真实 review、合并后名字自动上线 school.ha7ch.com/WALL.md。六个词里前五个（repo/commit/branch+PR/issue/fork）当堂在真仓库上走完；第六个 merge 是道真实的异步关——**开出 PR 即成功**。
 
 ## 这节课要干什么（一句话）
 让学生用"我表达意图、agent 执行、我验收"的 AI native 姿势，在 `HA7CH/ha7ch-school` 上完成：①第一个 issue（入学打卡）；②第一个 PR（往 `WALL.md` 末尾加上自己那一行）。**干活的命令全程零行**——学生唯一亲手做的是注册和登录授权，那是认证，不是干活。
