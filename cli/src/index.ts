@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, cpSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, cpSync, readFileSync, readdirSync, rmSync } from "node:fs";
 import { homedir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -96,6 +96,17 @@ function main() {
     );
     process.exitCode = 1;
     return;
+  }
+
+  // --force 的语义是「更新到最新」，所以它必须能撤回上游已经删掉、改名或降级成
+  // references/material/ 的文件。cpSync 只覆盖同名文件、不清理多余文件，旧残留会一直
+  // 留在学生机上；而 manifest.json 被覆盖后开课自检判定「已是最新」，再也不会去清它。
+  // 只删本包自己装的那几项（SKILL.md / manifest.json / references/），
+  // --dir 指向的目录里的其它东西一律不碰；学习进度在 ~/.ha7ch-school/，本来就在外面。
+  if (args.force) {
+    for (const entry of readdirSync(skillSrc)) {
+      rmSync(join(target, entry), { recursive: true, force: true });
+    }
   }
 
   mkdirSync(target, { recursive: true });
