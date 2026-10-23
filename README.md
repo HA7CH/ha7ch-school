@@ -44,6 +44,12 @@
 
 它不单独占一个入学选项，由 AI Native / FDE 课程按学生是否准备见企业、接项目或进入现场动态接入；也可以直接说「带我练一号位沟通」「客户拿竞品压我怎么办」进入。
 
+## 新实验：把一本书变成 Skill
+
+我们正在试一种新的学习载体：不把一本书压成摘要，而是保留它的章节骨架、概念关系、出处、练习和应用边界，把它编译成一个可以被 Agent 按需加载的 Skill。
+
+首个公开试验是 [Book to Skill](https://github.com/HA7CH/book-to-skill)：仓库里既有负责转换书籍的元 Skill，也有按十三篇组织的《孙子兵法》样本。它目前是 v0.1 实验项目，不是 School 的正式课程；欢迎先安装试用，看看“加载一本书”能不能成为新的学习方式。
+
 ## 从公开课走进现场
 
 已经熟悉 Codex，并且能做出一个可运行的产品，或者有扎实的商务、咨询、销售与客户沟通能力，可以继续参加 [HA7CH FDE Camp](https://github.com/HA7CH/anc-fde-camp/blob/main/SKILL.md)。这是两天一夜的线下小班：把企业判断、AI 构建、客户沟通和现场交付串成一条路，经过 Whiteboard Interview 达到毕业线后，获得 `HA7CH FDE Certified` 并进入 FDE 人才池。
