@@ -21,6 +21,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
+    "test": "npm run build && node --test test/cli.test.mjs",
     "prepare-skill": "node scripts/prepare-skill.mjs",
     "prebuild": "npm run prepare-skill",
     "build": "tsc",

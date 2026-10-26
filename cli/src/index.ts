@@ -47,8 +47,14 @@ function parseArgs(argv: string[]): Args {
   const args: Args = { codex: false, force: false, help: false, version: false };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
-    if (a === "--dir") args.dir = argv[++i];
-    else if (a === "--codex") args.codex = true;
+    if (a === "--dir") {
+      const dir = argv[i + 1];
+      if (!dir || dir.startsWith("-")) {
+        throw new Error("--dir requires a directory path. Use --dir <path>.");
+      }
+      args.dir = dir;
+      i++;
+    } else if (a === "--codex") args.codex = true;
     else if (a === "--force") args.force = true;
     else if (a === "-h" || a === "--help") args.help = true;
     else if (a === "-v" || a === "--version") args.version = true;
@@ -66,7 +72,14 @@ function resolveTargetDir(args: Args): string {
 }
 
 function main() {
-  const args = parseArgs(process.argv.slice(2));
+  let args: Args;
+  try {
+    args = parseArgs(process.argv.slice(2));
+  } catch (error) {
+    console.error(error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
+    return;
+  }
 
   if (args.help) {
     console.log(HELP);
