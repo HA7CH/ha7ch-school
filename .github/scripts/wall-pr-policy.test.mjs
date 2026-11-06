@@ -86,6 +86,33 @@ test("rejects one added line when it was inserted before the file end", () => {
   assert.match(result.errors.join(" "), /文件末尾/);
 });
 
+function wallChangeFor(line, login = "student-one") {
+  return validateWallChange({
+    pr: { state: "open", draft: false, user: { login } },
+    files: [{ ...files[0], patch: `@@ -3,1 +3,2 @@\n+${line}` }],
+    headContent: `${baseContent}${line}\n`,
+  });
+}
+
+test("rejects a line whose message hides bidi or zero-width characters", () => {
+  for (const [name, char] of [
+    ["RIGHT-TO-LEFT OVERRIDE", "\u202e"],
+    ["LEFT-TO-RIGHT ISOLATE", "\u2066"],
+    ["ZERO WIDTH SPACE", "\u200b"],
+    ["BYTE ORDER MARK", "\ufeff"],
+    ["SOFT HYPHEN", "\u00ad"],
+  ]) {
+    const result = wallChangeFor(`- 2026-08-25 · @student-one · 来学 FDE${char}`);
+    assert.equal(result.ok, false, `${name} 应该被拦下`);
+    assert.match(result.errors.join(" "), /不可见控制字符/);
+  }
+});
+
+test("still accepts emoji that need a zero-width joiner", () => {
+  const result = wallChangeFor("- 2026-08-25 · @student-one · 👩\u200d💻 来学 FDE");
+  assert.equal(result.ok, true);
+});
+
 test("extracts and deduplicates explicit closing references", () => {
   assert.deepEqual(parseClosingIssueNumbers("Closes #58\nfixes #58\nResolved #60"), [58, 60]);
 });
