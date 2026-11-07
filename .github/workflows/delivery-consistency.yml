@@ -1,0 +1,27 @@
+# 课程走三条分发路径（npm / 托管站 / manifest 手工安装），必须运送同一份内容。
+# 对不齐不会在合并时报错，只会让一部分学生拿到旧版或读不到讲义——所以放在 PR 上拦。
+name: 分发路径一致性
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - run: node --test .github/scripts/delivery-consistency.test.mjs
