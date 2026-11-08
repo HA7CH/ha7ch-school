@@ -38,7 +38,13 @@ export function validateWallChange({ pr, files, headContent }) {
 
   if (!pr || pr.state !== "open") errors.push("PR 不是 open 状态");
   if (pr?.draft) errors.push("Draft PR 不自动处理");
-  if (!pr?.user?.login) errors.push("无法确认 PR 作者");
+  // 作者是后面每一步的前提（要拿它跟墙上用户名对齐），确认不了就必须就地返回：
+  // 继续往下会在 `pr.user.login` 抛 TypeError，把这条已经记下的拒绝原因吞掉，
+  // 学生看到的就变成机器人的「运行失败」回执，而不是「验收未通过 + 原因」。
+  if (!pr?.user?.login) {
+    errors.push("无法确认 PR 作者");
+    return { ok: false, errors };
+  }
 
   if (!Array.isArray(files) || files.length !== 1) {
     errors.push("必须且只能修改一个文件");
