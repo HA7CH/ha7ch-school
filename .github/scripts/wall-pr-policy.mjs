@@ -1,5 +1,14 @@
 const WALL_PATH = "WALL.md";
 
+// 上墙行会被机器人自动 squash merge 进主干，再公开渲染到 school.ha7ch.com 与 GitHub，
+// 中间没有人工 review。下面这些字符不可见，却能改变渲染结果或绕过去重：
+//   C0/C1 控制字符、软连字符
+//   双向控制字符（U+061C/200E/200F/202A-202E/2066-2069）——可让整行倒着显示成别人的记录
+//   零宽与不可见连接符（U+200B/2060-2064/FEFF）——两条肉眼完全相同的记录会各自通过去重
+// 故意放行 U+200C/U+200D：emoji 连接符与波斯语/阿拉伯语正字法要用。
+const INVISIBLE_CHARS =
+  /[\u0000-\u001f\u007f-\u009f\u00ad\u061c\u200b\u200e\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]/;
+
 function normalizeLogin(value) {
   return String(value || "").trim().toLowerCase();
 }
@@ -93,7 +102,7 @@ export function validateWallChange({ pr, files, headContent }) {
     errors.push(`墙上用户名 @${handle} 必须与 PR 作者 @${pr.user.login} 一致`);
   }
   if (message.length > 500) errors.push("一句话超过 500 个字符，请先人工 review");
-  if (/[\u0000-\u001f\u007f]/.test(message)) errors.push("一句话包含不可见控制字符");
+  if (INVISIBLE_CHARS.test(message)) errors.push("一句话包含不可见控制字符或双向控制字符");
 
   return { ok: errors.length === 0, errors, line, date, handle, message };
 }
