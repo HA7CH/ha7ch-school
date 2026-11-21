@@ -46,9 +46,9 @@
 
 ## 从公开课走进现场
 
-已经熟悉 Codex，并且能做出一个可运行的产品，或者有扎实的商务、咨询、销售与客户沟通能力，可以继续参加 [HA7CH FDE Camp](https://github.com/HA7CH/anc-fde-camp/blob/main/SKILL.md)。这是两天一夜的线下小班：把企业判断、AI 构建、客户沟通和现场交付串成一条路，经过 Whiteboard Interview 达到毕业线后，获得 `HA7CH FDE Certified` 并进入 FDE 人才池。
+已经熟悉 Codex，并且能做出一个可运行的产品，或者有扎实的商务、咨询、销售与客户沟通能力，可以继续了解 **ANC Camp（原 FDE Camp）**。这是线下进阶训练，把企业判断、AI 构建、客户沟通和现场交付串成一条路。达到 Whiteboard Interview 考核要求的学员可获得 `HA7CH FDE Certified`，实际考核及认证安排以当期为准。
 
-深圳场已于 2026 年 9 月 13 日结束。下一场为北京场，2026 年 9 月 26 日开始；具体日程及费用以 [FDE Camp 场次资料](https://github.com/HA7CH/anc-fde-camp/blob/main/references/program.md) 为准，报名付款前请再确认。报名加微信 `lawtedwu`，好友申请写 `FDE CAMP`。
+场次、费用和报名方式统一以 [ANC Camp 官方资料](https://camp.ha7ch.com/references/program.md) 为准。安排行程或付款前，请先向主办方确认。
 
 ## 安装
 
